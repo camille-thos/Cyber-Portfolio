@@ -1,47 +1,50 @@
 # Cyber Portfolio – Camille THOS
 
-Administrateur Systèmes & Réseaux avec 3 ans d’expérience (formation et alternance), spécialisé en sécurisation d’infrastructures Windows/Linux et en détection d’incidents.
+Administrateur Systèmes & Réseaux avec 3 ans d’expérience (formation et alternance), actuellement orienté vers la cybersécurité opérationnelle.
 
-Ce dépôt regroupe mes laboratoires personnels réalisés dans le cadre de ma montée en compétence en cybersécurité, avec une orientation Blue Team et Purple Team (détection, analyse et amélioration continue de la posture de sécurité).
+Ce dépôt regroupe mes laboratoires personnels réalisés afin d’approfondir mes compétences en détection, analyse d’incidents et sécurisation d’infrastructures Windows/Linux.
 
----
-
-## 🎯 Objectifs
-
-- Comprendre les techniques d’attaque courantes (AD, authentification, élévation de privilèges)
-- Observer et analyser les traces laissées dans les journaux système
-- Mettre en place des mécanismes de détection et d’alerte
-- Appliquer des mesures de durcissement adaptées aux environnements Windows/Linux
-- Documenter les bonnes pratiques et axes d’amélioration
+L’objectif est de travailler des scénarios concrets, comprendre les traces laissées par différentes techniques d’attaque et améliorer progressivement la posture de sécurité des environnements testés.
 
 ---
 
-## 🛠️ Compétences techniques mobilisées
+## Objectifs
 
-- Active Directory (gestion des droits, GPO, audit, durcissement)
-- Analyse de logs Windows (Event Viewer, politiques d’audit)
-- Segmentation réseau (VLAN, firewalling)
-- Supervision & alerting (Zabbix)
+- Comprendre des techniques d’attaque courantes en environnement Active Directory
+- Analyser les journaux système et identifier des indicateurs d’activité suspecte
+- Mettre en place des mécanismes de détection adaptés
+- Appliquer des mesures de durcissement cohérentes
+- Documenter une démarche d’amélioration continue
+
+---
+
+## Compétences mobilisées dans les labs
+
+- Active Directory : gestion des droits, GPO, audit, durcissement
+- Analyse des journaux Windows (Event Viewer, stratégies d’audit)
+- Segmentation réseau (VLAN, règles de filtrage)
+- Supervision et alerting (Zabbix)
 - Virtualisation (VMware / Proxmox)
 - Gestion d’incidents N1/N2
 
 ---
 
-## 📂 Labs disponibles
+## Labs disponibles
 
-🔐 **Active Directory – Attaque & Défense**  
-Simulation d’attaques sur environnement AD, analyse des logs et mise en place de contre-mesures.
+### Active Directory – Attaque & Défense
+Simulation de scénarios d’attaque sur un environnement AD, analyse des événements générés et mise en place de mesures correctives.
 
-🛡️ **Hardening Windows Server**  
-Application de bonnes pratiques de sécurisation et comparaison avant / après durcissement.
+### Hardening Windows Server
+Application de bonnes pratiques de sécurisation et analyse des impacts avant / après configuration.
 
-📊 **Supervision & détection d’incidents**  
-Mise en place d’une supervision et analyse d’événements anormaux.
+### Supervision et détection d’incidents
+Mise en place d’une supervision technique et étude d’événements anormaux.
 
-🧪 **Tests et analyses TryHackMe**  
-Analyse structurée de scénarios de sécurité et compréhension des techniques d’attaque.
+### Analyses de scénarios (TryHackMe)
+Travail personnel sur des environnements de test avec restitution structurée des techniques observées.
 
 ---
 
-🎓 Alternance cybersécurité recherchée pour 2026–2028.
-Orientation : Blue Team / SecOps / Purple Team.
+Alternance en cybersécurité recherchée pour la période 2026–2028. 
+
+Orientation : Blue Team / SecOps / approche Purple (compréhension attaque & défense).
