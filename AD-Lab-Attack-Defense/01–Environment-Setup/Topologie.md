@@ -1,5 +1,3 @@
-# Environment Setup
-
 ## Objectif
 
 Mettre en place une infrastructure Active Directory fonctionnelle dans un environnement réseau segmenté simulant un système d'information d’entreprise.
