@@ -22,7 +22,7 @@ Le lab suit une logique proche d’un environnement réel :
 - Kali Linux – Machine d’attaque
 - Wazuh Server – SIEM
 
-Réseau isolé : `192.168.100.0/24`
+Réseau isolé : `192.168.1.0/24`
 
 ---
 
