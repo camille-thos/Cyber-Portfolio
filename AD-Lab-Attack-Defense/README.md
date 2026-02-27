@@ -2,85 +2,35 @@
 
 ## Objectif
 
-Mettre en place un environnement Active Directory, simuler des scénarios d’attaque simples et analyser les événements générés côté contrôleur de domaine.
+Mettre en place un environnement Active Directory, simuler une attaque de type brute force et construire progressivement des mécanismes de détection et de réponse.
 
-L’objectif est de comprendre concrètement les traces laissées lors d’une tentative de compromission et d’identifier les axes d’amélioration en matière de détection et de durcissement.
+Le lab suit une logique proche d’un environnement réel :
+
+1. Mise en place de l’infrastructure
+2. Simulation d’attaque
+3. Analyse manuelle
+4. Durcissement
+5. Centralisation SIEM
+6. Automatisation de la réponse
 
 ---
 
-## Architecture du lab
+## Architecture
 
-- Windows Server 2022 – Contrôleur de domaine (lab.local)
-- Windows 10 – Poste client joint au domaine
+- Windows Server 2022 – Contrôleur de domaine
+- Windows 10 – Poste client
 - Kali Linux – Machine d’attaque
+- Wazuh Server – SIEM
 
-Environnement virtualisé sous VMware.
-
-Captures de l’architecture à venir.
-
----
-
-## Mise en place
-
-- Installation du rôle AD DS
-- Promotion en contrôleur de domaine
-- Création de comptes utilisateurs (standard et administrateur)
-- Configuration des stratégies d’audit via GPO :
-  - Connexions réussies et échouées
-  - Modifications de comptes
-  - Changements de privilèges
-
-Captures de configuration à venir.
+Réseau isolé : `192.168.100.0/24`
 
 ---
 
-## Attaques simulées
+## Phases du lab
 
-### Tentatives de brute force
-
-Simulation de tentatives répétées d’authentification incorrecte sur un compte utilisateur afin de générer des événements d’échec dans les journaux de sécurité.
-
-### Tentative d’accès non autorisé
-
-Essai d’accès à des ressources administratives depuis un compte standard afin d’observer les logs associés.
-
-Captures des tests et des événements à venir.
-
----
-
-## Logs observés (analyse en cours)
-
-Événements identifiés :
-
-- Event ID 4625 – Échec d’ouverture de session  
-- Event ID 4624 – Ouverture de session réussie  
-- Event ID 4771 – Échec d’authentification Kerberos  
-
-Premières observations :
-
-La répétition d’Event ID 4625 sur un même compte et depuis une même source constitue un indicateur potentiel de brute force.  
-La corrélation entre plusieurs échecs suivis d’un succès mérite une investigation approfondie.
-
-Analyse détaillée des champs (Logon Type, IP source, Workstation Name) à venir.
-
----
-
-## Mesures mises en place
-
-- Politique de verrouillage de compte après plusieurs tentatives
-- Renforcement de la stratégie de mot de passe
-- Vérification et limitation des privilèges utilisateurs
-- Activation complète des audits de sécurité
-
----
-
-## Pistes d’amélioration
-
-- Centralisation des logs vers une solution de supervision
-- Mise en place d’alertes automatiques
-- Ajout de Sysmon pour enrichir la télémétrie
-- Corrélation d’événements pour détection plus avancée
-
----
-
-Lab en cours d’enrichissement et de documentation.
+- 01 – Environment Setup
+- 02 – Attack Simulation
+- 03 – Manual Detection
+- 04 – Security Hardening
+- 05 – SIEM Integration (Wazuh)
+- 06 – Automated Response
