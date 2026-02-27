@@ -28,16 +28,16 @@ Le réseau interne représente le système d’information, tandis que le résea
 
 | Machine | Rôle | Adresse IP |
 |---|---|---|
-| OPNsense | Gateway LAN | 192.168.1.1 |
-| DC01 | Domain Controller | 192.168.1.2 |
-| CLIENT01 | Poste utilisateur | 192.168.1.10 |
+| OPNsense | Gateway LAN | 192.168.2.1 |
+| DC01 | Domain Controller | 192.168.2.2 |
+| CLIENT01 | Poste utilisateur | 192.168.2.10 |
 
 ### ATTACK NET — Réseau attaquant
 
 | Machine | Rôle | Adresse IP |
 |---|---|---|
-| OPNsense | Gateway OPT1 | 192.168.2.1 |
-| KALI01 | Machine d’attaque | 192.168.2.10 |
+| OPNsense | Gateway OPT1 | 192.168.3.1 |
+| KALI01 | Machine d’attaque | 192.168.3.10 |
 
 ---
 
