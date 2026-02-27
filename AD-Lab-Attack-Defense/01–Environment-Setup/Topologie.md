@@ -92,7 +92,7 @@ Cette organisation permet :
 
 Capture d’écran de la structure :
 
-![Organisation Active Directory](images/ADGLP.png)
+![Organisation Active Directory](Images/AGDLP.png)
 
 
 ---
