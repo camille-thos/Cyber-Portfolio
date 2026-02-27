@@ -89,7 +89,7 @@ Cette étape permet de différencier ultérieurement une activité normale d’u
 
 (Capture à ajouter : configuration GPO audit)
 
-![GPO Audit Configuration](./screenshots/gpo_audit.png)
+![GPO Audit Configuration](./images/gpo_audit.png)
 
 ---
 
@@ -97,7 +97,7 @@ Cette étape permet de différencier ultérieurement une activité normale d’u
 
 (Capture à ajouter : Event ID 4624 / 4625)
 
-![Event Viewer Logs](./screenshots/eventviewer_security.png)
+![Event Viewer Logs](./images/eventviewer_security.png)
 
 ---
 
