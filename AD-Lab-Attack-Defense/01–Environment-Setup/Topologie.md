@@ -53,7 +53,7 @@ Interfaces :
 
 ---
 
-### DC01 — Windows Server 2022
+### DC01 — Windows Server 2025
 - Active Directory Domain Services
 - DNS
 - Domaine : `lab.local`
@@ -63,6 +63,37 @@ Interfaces :
 ### CLIENT01 — Windows 10
 - Poste utilisateur joint au domaine
 - Utilisé pour générer de l’activité légitime.
+---
+
+## Organisation Active Directory
+
+L’Active Directory est structuré de manière simple afin de représenter
+une organisation d’entreprise classique et faciliter les scénarios
+d’attaque et d’analyse.
+
+Chaque service dispose de sa propre unité organisationnelle (OU)
+contenant les utilisateurs, groupes et ordinateurs associés.
+
+Structure mise en place :
+
+- OU_Comptabilite
+- OU_IT
+- OU_RH
+
+Chaque OU contient :
+- un dossier **Utilisateurs**
+- un dossier **Groupes**
+- un dossier **Ordinateurs**
+
+Cette organisation permet :
+- d’appliquer des stratégies de groupe ciblées (GPO)
+- de simuler des délégations d’administration
+- de reproduire des cas réalistes d’élévation de privilèges
+
+Capture d’écran de la structure :
+
+![Organisation Active Directory](images/ADGLP.png)
+
 
 ---
 
