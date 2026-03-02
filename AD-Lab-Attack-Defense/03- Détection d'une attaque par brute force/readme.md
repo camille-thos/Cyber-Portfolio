@@ -28,7 +28,7 @@ Vérification de l’exposition du service RDP depuis le réseau attaquant.
 Commande :
 
 ```bash
-nmap -p 3389 192.168.2.2
+nmap port et l'ip
 ```
 
 Résultat attendu :
@@ -47,7 +47,7 @@ Utilisation de Hydra pour simuler plusieurs tentatives d’authentification.
 Commande utilisée :
 
 ```bash
-hydra -l administrateur -P /usr/share/wordlists/rockyou.txt rdp://192.168.2.2
+Je ne mettrais pas la commande qui m'a servis à faire du brute force, nous ne sommes pas là pour ça.
 ```
 
 Objectif :
