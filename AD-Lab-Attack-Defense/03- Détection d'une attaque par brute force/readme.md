@@ -76,7 +76,7 @@ Comportement identifié :
 - origine réseau : machine Kali
 
 Screenshot à placer :
-Images/eventviewer-bruteforce.png
+(./images/logs.png)
 
 ---
 
