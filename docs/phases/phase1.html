@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Phase 1 — Infrastructure | Cyber Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>Cyber Portfolio</h2>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Présentation</a></li>
+
+                <p class="menu-title">LAB ACTIVE DIRECTORY</p>
+
+                <li class="active">Phase 1 — Infrastructure</li>
+                <li><a href="#">Phase 2 — Audit</a></li>
+                <li><a href="#">Phase 3 — Détection</a></li>
+                <li><a href="#">Phase 4 — Réponse</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <!-- CONTENT -->
+    <main class="content">
+
+        <h1>Phase 1 — Mise en place de l’infrastructure</h1>
+
+        <p class="intro">
+            Cette phase consiste à construire une infrastructure Active Directory
+            fonctionnelle dans un environnement réseau segmenté reproduisant
+            un système d'information d’entreprise.
+        </p>
+
+
+        <!-- OBJECTIF -->
+        <section class="card">
+            <h2>Objectif</h2>
+
+            <p>
+                Mettre en place une infrastructure Active Directory fonctionnelle
+                servant de base aux futures phases d’observabilité, détection et réponse.
+            </p>
+
+            <ul>
+                <li>Firewall périmétrique</li>
+                <li>Réseau interne segmenté</li>
+                <li>Contrôleur de domaine</li>
+                <li>Poste client joint au domaine</li>
+                <li>Machine attaquante isolée</li>
+            </ul>
+
+            <p><b>Aucun mécanisme de détection ou SIEM n’est utilisé à ce stade.</b></p>
+        </section>
+
+
+        <!-- ARCHITECTURE -->
+        <section class="card">
+            <h2>Architecture</h2>
+
+            <p>
+                Le réseau interne représente le système d’information tandis que
+                le réseau ATTACK simule une zone non fiable utilisée pour les attaques.
+            </p>
+        </section>
+
+
+        <!-- PLAN ADRESSAGE -->
+        <section class="card">
+            <h2>Plan d’adressage</h2>
+
+            <h3>LAN — Infrastructure interne</h3>
+
+            <table>
+                <tr>
+                    <th>Machine</th>
+                    <th>Rôle</th>
+                    <th>Adresse IP</th>
+                </tr>
+                <tr>
+                    <td>OPNsense</td>
+                    <td>Gateway LAN</td>
+                    <td>192.168.2.1</td>
+                </tr>
+                <tr>
+                    <td>DC01</td>
+                    <td>Domain Controller</td>
+                    <td>192.168.2.2</td>
+                </tr>
+                <tr>
+                    <td>CLIENT01</td>
+                    <td>Poste utilisateur</td>
+                    <td>192.168.2.10</td>
+                </tr>
+            </table>
+
+            <h3>ATTACK NET — Réseau attaquant</h3>
+
+            <table>
+                <tr>
+                    <th>Machine</th>
+                    <th>Rôle</th>
+                    <th>Adresse IP</th>
+                </tr>
+                <tr>
+                    <td>OPNsense</td>
+                    <td>Gateway OPT1</td>
+                    <td>192.168.3.1</td>
+                </tr>
+                <tr>
+                    <td>KALI01</td>
+                    <td>Machine d’attaque</td>
+                    <td>192.168.3.10</td>
+                </tr>
+            </table>
+        </section>
+
+
+        <!-- MACHINES -->
+        <section class="card">
+            <h2>Machines virtuelles</h2>
+
+            <h3>OPNsense</h3>
+            <p>Firewall assurant la segmentation réseau.</p>
+
+            <ul>
+                <li>WAN : accès externe (optionnel)</li>
+                <li>LAN : réseau interne</li>
+                <li>OPT1 : réseau attaquant</li>
+            </ul>
+
+            <h3>DC01 — Windows Server 2025</h3>
+            <ul>
+                <li>Active Directory Domain Services</li>
+                <li>DNS</li>
+                <li>Domaine : <code>lab.local</code></li>
+            </ul>
+
+            <h3>CLIENT01 — Windows 10</h3>
+            <ul>
+                <li>Poste joint au domaine</li>
+                <li>Génération d’activité légitime</li>
+            </ul>
+
+            <h3>KALI01</h3>
+            <p>Machine utilisée pour simuler les attaques.</p>
+        </section>
+
+
+        <!-- ORGANISATION AD -->
+        <section class="card">
+            <h2>Organisation Active Directory</h2>
+
+            <p>
+                L’Active Directory est structuré pour représenter une organisation
+                d’entreprise classique et faciliter les scénarios d’analyse.
+            </p>
+
+            <ul>
+                <li>OU_Comptabilite</li>
+                <li>OU_IT</li>
+                <li>OU_RH</li>
+            </ul>
+
+            <p>Chaque OU contient :</p>
+
+            <ul>
+                <li>Utilisateurs</li>
+                <li>Groupes</li>
+                <li>Ordinateurs</li>
+            </ul>
+
+            <p>
+                Cette organisation permet l’application de GPO ciblées,
+                la simulation de délégations et des scénarios réalistes
+                d’élévation de privilèges.
+            </p>
+
+            <img src="../AD-Lab-Attack-Defense/01-Environment-Setup/Images/AGDLP.png"
+                 alt="Organisation Active Directory"
+                 class="screenshot">
+        </section>
+
+
+        <!-- VALIDATION -->
+        <section class="status-box">
+            <h2>Objectif de validation</h2>
+
+            <ul>
+                <li>✅ Domaine Active Directory opérationnel</li>
+                <li>✅ Client joint au domaine</li>
+                <li>✅ Communication réseau fonctionnelle</li>
+                <li>✅ Segmentation réseau active</li>
+            </ul>
+
+            <p>Les captures d’écran seront enrichies progressivement.</p>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
