@@ -12,50 +12,71 @@
 
 <body>
 
-<div class="layout">
+<div class="app">
 
+<!-- SIDEBAR -->
 <aside class="sidebar">
-<h2>Cyber Portfolio</h2>
+
+<div class="logo">
+Cyber Portfolio
+</div>
 
 <nav>
-<a href="index.html">Présentation</a>
 
-<div class="nav-section">Phases</div>
+<a class="nav-link active" href="#">Présentation</a>
 
-<a href="phases/phase1.html">Phase 1 — Infrastructure</a>
-<a href="phases/phase2.html">Phase 2 — Audit</a>
-<a href="phases/phase3.html">Phase 3 — Détection</a>
-<a href="phases/phase4.html">Phase 4 — Réponse</a>
+<div class="nav-title">LAB ACTIVE DIRECTORY</div>
+
+<a class="nav-link" href="../01-Environment-Setup/README.md">Phase 1 — Infrastructure</a>
+<a class="nav-link" href="../02-Observabilité et Baseline/README.md">Phase 2 — Observabilité</a>
+<a class="nav-link" href="../03- Détection d'une attaque par brute force/README.md">Phase 3 — Détection</a>
 
 </nav>
+
 </aside>
 
+<!-- MAIN CONTENT -->
 <main class="content">
 
+<header>
 <h1>Cyber Portfolio</h1>
-
-<p>
+<p class="subtitle">
 Administrateur Systèmes & Réseaux orienté Blue Team / Purple Team.
-Ce site documente la mise en place progressive d’un laboratoire Active Directory
-destiné à simuler un environnement d’entreprise et analyser des scénarios d’attaque.
+Documentation d’un laboratoire Active Directory simulant un environnement d’entreprise.
 </p>
+</header>
 
 <section class="card">
-<h2>Objectifs</h2>
-<ul>
-<li>Comprendre les techniques d’attaque</li>
-<li>Observer les traces système</li>
-<li>Mettre en place des mécanismes de détection</li>
-<li>Améliorer la posture de sécurité</li>
-</ul>
+<h2>Objectif</h2>
+<p>
+Ce portfolio présente une approche progressive de la cybersécurité :
+construction d’infrastructure, mise en observabilité,
+détection d’attaque et amélioration continue de la posture de sécurité.
+</p>
 </section>
 
-<section class="card">
-<h2>Approche</h2>
-<p>
-Le lab suit une progression logique :
-construction → visibilité → détection → réponse.
-</p>
+<section class="grid">
+
+<div class="phase-card">
+<h3>Phase 1</h3>
+<p>Mise en place de l’infrastructure Active Directory segmentée.</p>
+</div>
+
+<div class="phase-card">
+<h3>Phase 2</h3>
+<p>Activation des audits et création d’une baseline d’observation.</p>
+</div>
+
+<div class="phase-card">
+<h3>Phase 3</h3>
+<p>Simulation et détection d’une attaque brute force.</p>
+</div>
+
+<div class="phase-card">
+<h3>Phase 4</h3>
+<p>Mise en place d’une réponse de sécurité automatisée.</p>
+</div>
+
 </section>
 
 </main>
