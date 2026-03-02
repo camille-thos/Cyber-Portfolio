@@ -93,8 +93,6 @@ Cette étape permet de différencier ultérieurement une activité normale d’u
 
 ### Journaux de sécurité — Event Viewer
 
-(Capture à ajouter : Event ID 4624 / 4625)
-
 ![Event Viewer Logs](./images/eventviewer_security.png)
 
 ---
