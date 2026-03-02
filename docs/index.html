@@ -2,28 +2,33 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cyber Portfolio — Camille THOS</title>
+
 <link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="layout">
 
-<nav class="sidebar">
+<aside class="sidebar">
 <h2>Cyber Portfolio</h2>
 
-<ul>
-<li><a href="index.html">Présentation</a></li>
+<nav>
+<a href="index.html">Présentation</a>
 
-<li class="section">Phases</li>
-<li><a href="phases/phase1.html">Phase 1 — Infrastructure</a></li>
-<li><a href="phases/phase2.html">Phase 2 — Audit</a></li>
-<li><a href="phases/phase3.html">Phase 3 — Détection</a></li>
-<li><a href="phases/phase4.html">Phase 4 — Réponse</a></li>
+<div class="nav-section">Phases</div>
 
-</ul>
+<a href="phases/phase1.html">Phase 1 — Infrastructure</a>
+<a href="phases/phase2.html">Phase 2 — Audit</a>
+<a href="phases/phase3.html">Phase 3 — Détection</a>
+<a href="phases/phase4.html">Phase 4 — Réponse</a>
+
 </nav>
+</aside>
 
 <main class="content">
 
@@ -31,29 +36,27 @@
 
 <p>
 Administrateur Systèmes & Réseaux orienté Blue Team / Purple Team.
+Ce site documente la mise en place progressive d’un laboratoire Active Directory
+destiné à simuler un environnement d’entreprise et analyser des scénarios d’attaque.
 </p>
 
-<p>
-Ce portfolio présente la mise en place progressive d’un laboratoire
-Active Directory simulant un système d’information d’entreprise,
-avec une approche centrée sur la détection et la réponse aux incidents.
-</p>
-
+<section class="card">
 <h2>Objectifs</h2>
-
 <ul>
-<li>Comprendre les mécanismes d’attaque</li>
-<li>Observer les traces systèmes</li>
-<li>Mettre en place des capacités de détection</li>
+<li>Comprendre les techniques d’attaque</li>
+<li>Observer les traces système</li>
+<li>Mettre en place des mécanismes de détection</li>
 <li>Améliorer la posture de sécurité</li>
 </ul>
+</section>
 
-<h2>Architecture globale</h2>
-
+<section class="card">
+<h2>Approche</h2>
 <p>
-Infrastructure virtualisée comprenant un contrôleur de domaine,
-un poste client, un firewall de segmentation et une machine attaquante.
+Le lab suit une progression logique :
+construction → visibilité → détection → réponse.
 </p>
+</section>
 
 </main>
 
