@@ -130,3 +130,25 @@ a:hover {
     margin-top: 12px;
     font-weight: 500;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #1f2937;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #020617;
+}
+
+.screenshot {
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid #1f2937;
+}
