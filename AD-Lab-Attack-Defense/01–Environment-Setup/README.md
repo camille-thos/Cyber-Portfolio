@@ -1,3 +1,5 @@
+# Phase 02 — Mise en place de l'infrastructure
+
 ## Objectif
 
 Mettre en place une infrastructure Active Directory fonctionnelle dans un environnement réseau segmenté simulant un système d'information d’entreprise.
