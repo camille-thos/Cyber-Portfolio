@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Portfolio — Camille THOS</title>
+
+<title>Cyber Portfolio</title>
 
 <link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
 
 </head>
 
@@ -14,7 +14,8 @@
 
 <div class="app">
 
-<!-- SIDEBAR -->
+<!-- ================= SIDEBAR ================= -->
+
 <aside class="sidebar">
 
 <div class="logo">
@@ -23,58 +24,86 @@ Cyber Portfolio
 
 <nav>
 
-<a class="nav-link active" href="#">Présentation</a>
+<a class="nav-link active" href="index.html">
+Présentation
+</a>
 
-<div class="nav-title">LAB ACTIVE DIRECTORY</div>
+<div class="nav-title">LABS</div>
 
-<a class="nav-link" href="../01-Environment-Setup/README.md">Phase 1 — Infrastructure</a>
-<a class="nav-link" href="../02-Observabilité et Baseline/README.md">Phase 2 — Observabilité</a>
-<a class="nav-link" href="../03- Détection d'une attaque par brute force/README.md">Phase 3 — Détection</a>
+<a class="nav-link" href="lab-ad.html">
+Lab Active Directory
+</a>
 
 </nav>
 
 </aside>
 
-<!-- MAIN CONTENT -->
+<!-- ================= CONTENT ================= -->
+
 <main class="content">
 
-<header>
 <h1>Cyber Portfolio</h1>
-<p class="subtitle">
-Administrateur Systèmes & Réseaux orienté Blue Team / Purple Team.
-Documentation d’un laboratoire Active Directory simulant un environnement d’entreprise.
+
+<p class="intro">
+Administrateur Systèmes & Réseaux orienté <strong>Blue Team / Purple Team</strong>.
+Ce portfolio documente la mise en place progressive de laboratoires cybersécurité
+reproduisant un environnement d’entreprise réel afin d’analyser,
+détecter et répondre à des scénarios d’attaque.
 </p>
-</header>
+
+<!-- OBJECTIFS -->
 
 <section class="card">
-<h2>Objectif</h2>
-<p>
-Ce portfolio présente une approche progressive de la cybersécurité :
-construction d’infrastructure, mise en observabilité,
-détection d’attaque et amélioration continue de la posture de sécurité.
-</p>
+
+<h2>Objectifs</h2>
+
+<ul>
+<li>Comprendre les techniques d’attaque Active Directory</li>
+<li>Observer les traces système et événements sécurité</li>
+<li>Mettre en place des mécanismes de détection</li>
+<li>Améliorer la posture de sécurité</li>
+</ul>
+
 </section>
+
+<!-- APPROCHE -->
+
+<section class="card">
+
+<h2>Approche</h2>
+
+<p>
+Chaque laboratoire suit une progression logique inspirée des
+méthodologies Blue Team :
+</p>
+
+<ul>
+<li><strong>Construction</strong> — Infrastructure réaliste</li>
+<li><strong>Visibilité</strong> — Collecte des logs</li>
+<li><strong>Détection</strong> — Identification d’attaques</li>
+<li><strong>Réponse</strong> — Actions correctives</li>
+</ul>
+
+</section>
+
+<!-- LAB CARD -->
 
 <section class="grid">
 
 <div class="phase-card">
-<h3>Phase 1</h3>
-<p>Mise en place de l’infrastructure Active Directory segmentée.</p>
-</div>
 
-<div class="phase-card">
-<h3>Phase 2</h3>
-<p>Activation des audits et création d’une baseline d’observation.</p>
-</div>
+<h3>Lab Active Directory — Attack & Defense</h3>
 
-<div class="phase-card">
-<h3>Phase 3</h3>
-<p>Simulation et détection d’une attaque brute force.</p>
-</div>
+<p>
+Simulation complète d’un système d’information d’entreprise
+incluant segmentation réseau, Active Directory, audit avancé
+et détection d’attaques.
+</p>
 
-<div class="phase-card">
-<h3>Phase 4</h3>
-<p>Mise en place d’une réponse de sécurité automatisée.</p>
+<a href="lab-ad.html" class="button">
+Accéder au lab →
+</a>
+
 </div>
 
 </section>
