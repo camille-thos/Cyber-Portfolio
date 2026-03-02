@@ -1,4 +1,4 @@
-# Phase 02 — Mise en place de l'infrastructure
+# Phase 01 — Mise en place de l'infrastructure
 
 ## Objectif
 
