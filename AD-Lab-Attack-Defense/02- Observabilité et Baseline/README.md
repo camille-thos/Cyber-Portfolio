@@ -87,8 +87,6 @@ Cette étape permet de différencier ultérieurement une activité normale d’u
 
 ### Configuration des stratégies d’audit
 
-(Capture à ajouter : configuration GPO audit)
-
 ![GPO Audit Configuration](./images/GPO.png)
 
 ---
