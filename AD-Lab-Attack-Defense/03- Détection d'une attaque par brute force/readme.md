@@ -28,7 +28,7 @@ Vérification de l’exposition du service RDP depuis le réseau attaquant.
 Commande :
 
 ```bash
-nmap port et l'ip
+nmap port et ip cible
 ```
 
 Résultat attendu :
@@ -75,8 +75,7 @@ Comportement identifié :
 - suivie d’une authentification réussie
 - origine réseau : machine Kali
 
-Screenshot à placer :
-(./images/logs.png)
+![Event Viewer Logs](./images/logs.png)
 
 ---
 
