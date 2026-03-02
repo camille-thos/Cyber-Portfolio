@@ -1,135 +1,124 @@
-# Phase 3 — Détection d’une attaque par brute force
+# Phase 3 — Détection d’une attaque par brute force RDP
 
 ## Objectif
 
-Cette phase consiste à simuler une attaque simple de type brute force sur un environnement Active Directory afin de vérifier la capacité de détection mise en place lors de la phase précédente.
+Simuler une attaque par brute force sur un service RDP afin d’observer les traces générées dans les journaux Windows et valider la configuration d’audit mise en place lors de la phase précédente.
 
-L’objectif est d’observer les traces laissées dans les journaux Windows et d’identifier les indicateurs permettant de détecter une tentative de compromission.
-
-Cette étape marque le passage d’une infrastructure observable à une infrastructure capable de détecter un comportement malveillant.
+Cette phase se concentre uniquement sur la **détection** et l’analyse des événements de sécurité.
 
 ---
 
-## Environnement
+## Contexte
 
-Infrastructure déployée lors des phases précédentes :
+Après la mise en place de l’infrastructure Active Directory (Phase 1) et l’activation des audits avancés (Phase 2), une machine attaquante Kali Linux est utilisée pour simuler des tentatives d’authentification malveillantes.
 
-- DC01 — Windows Server 2022 (Contrôleur de domaine)
-- CLIENT01 — Poste utilisateur joint au domaine
-- KALI01 — Machine attaquante isolée
-- OPNsense — Segmentation réseau
+Cible :
+- DC01 — 192.168.2.2
+- Service : RDP (TCP 3389)
 
-Domaine Active Directory :
-
-lab.local
-
-Les stratégies d’audit avancées sont actives sur le contrôleur de domaine.
+Machine attaquante :
+- KALI01 — 192.168.3.10
 
 ---
 
-## Vérification des audits
+## Étape 1 — Découverte du service
 
-Application des stratégies :
+Vérification de l’exposition du service RDP depuis le réseau attaquant.
 
+Commande :
 
-gpupdate /force
+```bash
+nmap -p 3389 192.168.2.2
+```
 
+Résultat attendu :
+- port 3389 ouvert
+- service ms-wbt-server détecté
 
-Vérification de la configuration d’audit :
-
-
-auditpol /get /category:*
-
-
-Les catégories liées à l’authentification doivent être configurées en :
-
-Succès et Échec
-
----
-
-## Simulation de l’attaque
-
-Une série de tentatives d’authentification incorrectes a été réalisée afin de reproduire un comportement de brute force.
-
-Tests réalisés :
-
-- multiples connexions avec mot de passe erroné
-- répétition rapide des tentatives
-- utilisation d’un compte utilisateur standard
-
-L’objectif est uniquement de générer des événements de sécurité exploitables dans les journaux Windows.
+Screenshot à placer :
+Images/nmap-rdp-open.png
 
 ---
 
-## Observation des journaux
+## Étape 2 — Simulation d’un brute force RDP
 
-Analyse effectuée depuis :
+Utilisation de Hydra pour simuler plusieurs tentatives d’authentification.
 
-Observateur d’événements  
-→ Journaux Windows  
-→ Sécurité
+Commande utilisée :
 
-### Événements principaux observés
+```bash
+hydra -l administrateur -P /usr/share/wordlists/rockyou.txt rdp://192.168.2.2
+```
 
-| Event ID | Description |
-|---|---|
-| 4625 | Échec d’ouverture de session |
-| 4771 | Échec d’authentification Kerberos |
-| 4624 | Connexion réussie (si compromission simulée) |
+Objectif :
+- générer plusieurs échecs d’authentification
+- observer la génération d’événements de sécurité Windows
+
+Résultat observé :
+- multiples tentatives échouées
+- découverte d’un mot de passe valide
+
+Screenshot à placer :
+Images/hydra-success.png
+
+---
+
+## Étape 3 — Analyse des journaux Windows
+
+Analyse via l’Observateur d’événements :
+
+Chemin :
+Observateur d’événements → Journaux Windows → Sécurité
+
+Événements observés :
+
+- 4625 — Échec de connexion
+- 4624 — Connexion réussie
+- 4776 — Validation des identifiants
+
+Comportement identifié :
+- succession rapide d’échecs d’authentification
+- suivie d’une authentification réussie
+- origine réseau : machine Kali
+
+Screenshot à placer :
+Images/eventviewer-bruteforce.png
 
 ---
 
 ## Analyse
 
-La multiplication rapide des événements 4625 pour un même compte utilisateur constitue un indicateur fort de tentative de brute force.
+Cette simulation démontre que :
 
-La corrélation entre plusieurs échecs successifs suivis éventuellement d’une connexion réussie représente un scénario classique de compromission de compte.
+- les politiques d’audit fonctionnent correctement
+- une attaque brute force laisse une empreinte claire dans les logs
+- la corrélation temporelle permet d’identifier une attaque automatisée
 
-Cette phase permet de comprendre comment une attaque apparaît réellement du point de vue des journaux système.
-
----
-
-## Optimisation de l’observation
-
-Une console MMC personnalisée a été créée afin de centraliser les outils d’administration utilisés durant l’analyse :
-
-- Observateur d’événements (journal Sécurité)
-- Active Directory Users and Computers
-- Gestion des stratégies de groupe
-- DNS Manager
-
-Cette approche reproduit une méthode d’administration réaliste en regroupant les outils d’analyse dans une interface unique.
+Indices détectables :
+- grand nombre d’Event ID 4625
+- même compte ciblé
+- source réseau identique
+- réussite finale après plusieurs échecs
 
 ---
 
-## Validation de la phase
+## Conclusion
 
-La phase est considérée comme validée lorsque :
+L’environnement permet désormais :
 
-- les tentatives d’authentification génèrent des événements 4625
-- les journaux permettent d’identifier clairement l’activité suspecte
-- la corrélation entre action réalisée et trace système est confirmée
+- d’identifier une tentative d’attaque par brute force
+- d’analyser les journaux de sécurité Windows
+- de préparer la mise en place d’une réponse automatisée
 
----
-
-## Résultat
-
-L’environnement Active Directory permet désormais :
-
-- la détection d’échecs d’authentification répétés
-- l’identification d’un comportement anormal
-- l’analyse des traces laissées par une attaque simple
-
-L’infrastructure est maintenant prête pour la mise en place d’un mécanisme de réponse automatisée.
+La phase suivante introduira des mécanismes de réponse afin de bloquer automatiquement ce type de comportement.
 
 ---
 
-## Phase suivante
+## Objectif de validation
 
-Phase 4 — Mise en place d’une réponse de sécurité
+À la fin de cette phase :
 
-Objectifs :
-
-- automatiser la détection
-- générer une alerte
-- appliquer une mesure corrective (verrouillage ou surveillance renforcée)
+- une attaque brute force est simulée
+- les événements de sécurité sont générés
+- les logs permettent d’identifier clairement l’attaque
+- les captures d’écran documentent la détection
