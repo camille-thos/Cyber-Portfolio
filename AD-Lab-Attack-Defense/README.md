@@ -30,7 +30,5 @@ Réseau isolé : `192.168.1.0/24`
 
 - 01 – Environment Setup
 - 02 – Attack Simulation
-- 03 – Manual Detection
-- 04 – Security Hardening
-- 05 – SIEM Integration (Wazuh)
-- 06 – Automated Response
+- 03 – Detection & Analysis
+- 04 – Response & Hardening
