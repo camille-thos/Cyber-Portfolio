@@ -25,18 +25,11 @@ Machine attaquante :
 
 Vérification de l’exposition du service RDP depuis le réseau attaquant.
 
-Commande :
-
-```bash
-nmap port et ip cible
-```
-
 Résultat attendu :
 - port 3389 ouvert
 - service ms-wbt-server détecté
 
-Screenshot à placer :
-Images/nmap-rdp-open.png
+![Image de log ](./images/port.png)
 
 ---
 
@@ -52,8 +45,7 @@ Résultat observé :
 - multiples tentatives échouées
 - découverte d’un mot de passe valide
 
-Screenshot à placer :
-Images/hydra-success.png
+![Image de log ](./images/gen_log.png)
 
 ---
 
