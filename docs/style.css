@@ -1,50 +1,51 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f1115;
-    color: #e6e6e6;
+    font-family: "Segoe UI", sans-serif;
+    background: #0b0f14;
+    color: #d7dde7;
 }
 
-.container {
+.layout {
     display: flex;
 }
 
+/* SIDEBAR */
+
 .sidebar {
     width: 260px;
-    background: #161a22;
     height: 100vh;
-    padding: 20px;
+    background: #121821;
+    padding: 25px;
     position: fixed;
+    border-right: 1px solid #1f2630;
 }
 
 .sidebar h2 {
-    color: #ffffff;
-    font-size: 20px;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
-    margin: 10px 0;
+    color: #fff;
+    margin-bottom: 30px;
 }
 
 .sidebar a {
-    color: #bfc7d5;
+    display: block;
+    padding: 8px 0;
     text-decoration: none;
+    color: #9aa4b2;
+    transition: 0.2s;
 }
 
-.sidebar a:hover {
+.sidebar a:hover,
+.sidebar a.active {
     color: #ffffff;
 }
 
-.section {
+.nav-section {
     margin-top: 20px;
-    font-weight: bold;
-    color: #8aa4ff;
+    font-size: 13px;
+    color: #6f7b8a;
+    text-transform: uppercase;
 }
+
+/* CONTENT */
 
 .content {
     margin-left: 300px;
@@ -52,6 +53,37 @@ body {
     max-width: 900px;
 }
 
-h1, h2 {
+h1 {
     color: #ffffff;
+}
+
+.card {
+    background: #121821;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+    border: 1px solid #1f2630;
+}
+
+/* CODE BLOCK */
+
+pre {
+    background: #05080c;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    position: relative;
+}
+
+/* COPY BUTTON */
+
+.copy-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #1f2630;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
 }
