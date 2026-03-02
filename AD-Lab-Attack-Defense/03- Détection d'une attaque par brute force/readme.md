@@ -96,14 +96,3 @@ L’environnement permet désormais :
 - de préparer la mise en place d’une réponse automatisée
 
 La phase suivante introduira des mécanismes de réponse afin de bloquer automatiquement ce type de comportement.
-
----
-
-## Objectif de validation
-
-À la fin de cette phase :
-
-- une attaque brute force est simulée
-- les événements de sécurité sont générés
-- les logs permettent d’identifier clairement l’attaque
-- les captures d’écran documentent la détection
