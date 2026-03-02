@@ -42,13 +42,7 @@ Images/nmap-rdp-open.png
 
 ## Étape 2 — Simulation d’un brute force RDP
 
-Utilisation de Hydra pour simuler plusieurs tentatives d’authentification.
-
-Commande utilisée :
-
-```bash
-Je ne mettrais pas la commande qui m'a servis à faire du brute force, nous ne sommes pas là pour ça.
-```
+Utilisation de kali pour simuler plusieurs tentatives d’authentification.
 
 Objectif :
 - générer plusieurs échecs d’authentification
