@@ -35,7 +35,7 @@ L’objectif est de travailler des scénarios concrets, comprendre les traces la
 Simulation de scénarios d’attaque sur un environnement AD, analyse des événements générés et mise en place de mesures correctives.
 
 
-## Labs à venir
+## Labs en cours
 
 ### Hardening Windows Server
 Application de bonnes pratiques de sécurisation et analyse des impacts avant / après configuration.
