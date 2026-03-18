@@ -100,14 +100,6 @@ Déclencheur : plus de 5 Event ID 4625 en moins de 60 secondes depuis la même a
 
 Alerte générée :
 
-```
-Rule: 18152 - Multiple Windows authentication failures
-Level: 10
-Source IP: 192.168.3.10
-Target: DC01
-Events: 4625 x8 in 42s
-```
-
 (Capture — Alerte brute force RDP visible dans le dashboard Wazuh)
 
 ### Règle 2 — Authentification réussie après échecs répétés
@@ -116,13 +108,6 @@ Détection d'un Event ID 4624 immédiatement après une série de 4625 depuis la
 
 Alerte générée :
 
-```
-Rule: 18153 - Authentication success after multiple failures
-Level: 12
-Source IP: 192.168.3.10
-Target: DC01
-```
-
 (Capture — Corrélation des événements 4625 + 4624 dans Wazuh)
 
 ### Règle 3 — Création de compte hors baseline
@@ -130,14 +115,6 @@ Target: DC01
 Détection d'un Event ID 4720 en dehors des plages horaires ou depuis un compte non attendu.
 
 Alerte générée :
-
-```
-Rule: 18154 - New user account created
-Level: 8
-User: suspicious_user
-Created by: Administrator
-Target: DC01
-```
 
 (Capture — Alerte création de compte dans le dashboard Wazuh)
 
