@@ -287,9 +287,7 @@ body::after {
 footer span { color: rgba(255,255,255,0.75); }
 footer .footer-accent { color: #fff; font-weight: 500; }
 
-/* ── FADE ── */
-[data-f] { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
-[data-f].in { opacity: 1; transform: none; }
+
 
 @media (max-width: 580px) {
   .header-top { flex-direction: column; gap: 20px; }
