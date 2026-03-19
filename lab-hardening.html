@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardening Windows Server — Camille Thos</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --white: #fafaf8; --black: #111110; --gray: #888884; --light: #e8e8e4; --serif: 'DM Serif Display', Georgia, serif; --sans: 'DM Sans', sans-serif; }
+    [data-theme="dark"] { --white: #111110; --black: #eeecea; --gray: #888884; --light: #2a2a28; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--black); font-family: var(--sans); font-weight: 300; font-size: 15px; line-height: 1.65; transition: background 0.2s, color 0.2s; }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+    header { padding: 56px 0 0; margin-bottom: 72px; }
+    .header-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 40px; border-bottom: 1px solid var(--light); }
+    .name { font-family: var(--serif); font-size: 44px; line-height: 1; letter-spacing: -0.01em; }
+    .name em { font-style: italic; color: var(--gray); }
+    .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .header-meta { text-align: right; font-size: 13px; color: var(--gray); line-height: 2; }
+    .theme-toggle { background: none; border: 1px solid var(--light); color: var(--gray); font-family: var(--sans); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; cursor: pointer; transition: border-color 0.15s, color 0.15s; }
+    .theme-toggle:hover { border-color: var(--gray); color: var(--black); }
+    .breadcrumb { font-size: 12px; color: var(--gray); margin-bottom: 48px; display: flex; align-items: center; gap: 8px; }
+    .breadcrumb a { color: var(--gray); text-decoration: none; transition: color 0.15s; }
+    .breadcrumb a:hover { color: var(--black); }
+    .breadcrumb span { color: var(--light); }
+    .lab-header { margin-bottom: 64px; }
+    .lab-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .lab-num { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+    .lab-status { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray); border: 1px solid var(--light); padding: 3px 10px; }
+    .lab-title { font-family: var(--serif); font-size: clamp(28px, 5vw, 42px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .lab-intro { font-size: 15px; color: var(--gray); max-width: 580px; line-height: 1.75; margin-bottom: 24px; }
+    .lab-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 40px; }
+    .lab-tag { font-size: 11px; color: var(--gray); border: 1px solid var(--light); padding: 3px 8px; }
+    .coming-soon { border-top: 1px solid var(--light); border-bottom: 1px solid var(--light); padding: 80px 0; text-align: center; }
+    .coming-soon-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; }
+    .coming-soon-title { font-family: var(--serif); font-size: 30px; color: var(--black); margin-bottom: 14px; font-style: italic; }
+    .coming-soon-desc { font-size: 14px; color: var(--gray); max-width: 380px; margin: 0 auto; line-height: 1.75; }
+    .lab-nav { display: flex; justify-content: space-between; padding: 32px 0 48px; border-top: 1px solid var(--light); font-size: 13px; margin-top: 48px; }
+    .lab-nav a { color: var(--gray); text-decoration: none; transition: color 0.15s; }
+    .lab-nav a:hover { color: var(--black); }
+    footer { padding: 28px 0 48px; font-size: 12px; color: var(--gray); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--light); }
+    [data-f] { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    [data-f].in { opacity: 1; transform: none; }
+    @media (max-width: 580px) { .header-top { flex-direction: column; gap: 20px; } .header-right { align-items: flex-start; } .name { font-size: 34px; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="header-top">
+      <a href="index.html" style="text-decoration:none"><h1 class="name">Camille <em>Thos</em></h1></a>
+      <div class="header-right">
+        <button class="theme-toggle" onclick="toggleTheme()">◐ Thème</button>
+        <div class="header-meta">Bretagne, France<br>Administrateur Sys & Réseaux</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="breadcrumb" data-f>
+    <a href="index.html">Accueil</a>
+    <span>/</span>
+    <a href="index.html#labs">Labs</a>
+    <span>/</span>
+    Hardening Windows Server
+  </div>
+
+  <div class="lab-header" data-f>
+    <div class="lab-meta">
+      <span class="lab-num">Lab 02</span>
+      <span class="lab-status">En cours</span>
+    </div>
+    <h1 class="lab-title">Hardening Windows Server</h1>
+    <p class="lab-intro">Application de bonnes pratiques de sécurisation (CIS Benchmarks) et analyse comparative avant / après configuration.</p>
+    <div class="lab-tags">
+      <span class="lab-tag">Windows Server</span>
+      <span class="lab-tag">CIS Benchmark</span>
+      <span class="lab-tag">Audit</span>
+      <span class="lab-tag">GPO</span>
+    </div>
+  </div>
+
+  <div class="coming-soon" data-f>
+    <div class="coming-soon-label">En cours de réalisation</div>
+    <div class="coming-soon-title">Ce lab arrive bientôt.</div>
+    <p class="coming-soon-desc">Le contenu de ce lab est en cours de documentation. Revenez prochainement pour suivre l'avancement.</p>
+  </div>
+
+  <div class="lab-nav" data-f>
+    <a href="index.html#labs">← Tous les labs</a>
+    <a href="https://github.com/camille-thos/Cyber-Portfolio" target="_blank">GitHub ↗</a>
+  </div>
+
+  <footer>
+    <span>Camille Thos — 2026</span>
+    <span>Blue Team · SecOps · Purple</span>
+  </footer>
+</div>
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('[data-f]').forEach(el => obs.observe(el));
+  function toggleTheme() {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+</script>
+</body>
+</html>
