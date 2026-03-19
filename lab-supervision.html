@@ -23,7 +23,7 @@
     </div>
   </header>
 
-  <div class="breadcrumb" data-f>
+  <div class="breadcrumb">
     <a href="index.html">Accueil</a>
     <span>/</span>
     <a href="index.html#labs">Labs</a>
@@ -31,7 +31,7 @@
     Supervision &amp; Détection d'incidents
   </div>
 
-  <div class="lab-header" data-f>
+  <div class="lab-header">
     <div class="lab-meta">
       <span class="lab-num">Lab 03</span>
       <span class="lab-status">En cours</span>
@@ -46,13 +46,13 @@
     </div>
   </div>
 
-  <div class="coming-soon" data-f>
+  <div class="coming-soon">
     <div class="coming-soon-label">En cours de réalisation</div>
     <div class="coming-soon-title">Ce lab arrive bientôt.</div>
     <p class="coming-soon-desc">Le contenu de ce lab est en cours de documentation. Revenez prochainement pour suivre l'avancement.</p>
   </div>
 
-  <div class="lab-nav" data-f>
+  <div class="lab-nav">
     <a href="index.html#labs">← Tous les labs</a>
     <a href="https://github.com/camille-thos/Cyber-Portfolio" target="_blank">GitHub ↗</a>
   </div>
@@ -60,10 +60,7 @@
   
 </div>
 <script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('[data-f]').forEach(el => obs.observe(el));
+  
   function toggleTheme() {
     const html = document.documentElement;
     const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
