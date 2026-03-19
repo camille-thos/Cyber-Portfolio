@@ -42,15 +42,15 @@
     </nav>
   </header>
 
-  <section id="apropos" data-f>
+  <section id="apropos">
     <div class="section-label">À propos</div>
     <div class="about-body">
       <p>Je m&apos;appelle Camille THOS, j&apos;ai 27 ans. Au fil de mes formations (TAI au GRETA de Morlaix, TSSR à l&apos;ENI, puis Administrateur d&apos;Infrastructures Sécurisées à l&apos;AFPA de Rennes), je me suis découvert un vrai intérêt pour la cybersécurité. Pas uniquement sur l&apos;aspect technique, mais aussi sur la prévention : sensibiliser, anticiper, comprendre comment une organisation se protège avant même qu&apos;une attaque survienne.</p>
-      <p>Aujourd&apos;hui je construis cette spécialisation de façon concrète, avec une approche Purple Team : simuler des attaques pour mieux défendre. Mes labs AD, la détection sous Wazuh, les write-ups TryHackMe : tout ça c&apos;est une façon de m'instruire par la pratique. Je cherche une alternance Blue Team / SecOps pour 2026&ndash;2028 afin de continuer à progresser dans un vrai contexte professionnel.</p>
+      <p>Aujourd&apos;hui je construis cette spécialisation de façon concrète, avec une approche Purple Team : simuler des attaques pour mieux défendre. Mes labs AD, la détection sous Wazuh, les write-ups TryHackMe : tout ça c&apos;est une façon de s'instruire par la pratique. Je cherche une alternance Blue Team / SecOps pour 2026&ndash;2028 afin de continuer à progresser dans un vrai contexte professionnel.</p>
     </div>
   </section>
 
-  <section id="competences" data-f>
+  <section id="competences">
     <div class="section-label">Compétences</div>
     <table class="skills-table">
       <tr><td>Active Directory</td><td>GPO, gestion des droits, audit, durcissement</td></tr>
@@ -63,7 +63,7 @@
     </table>
   </section>
 
-  <section id="labs" data-f>
+  <section id="labs">
     <div class="section-label">Labs</div>
 
     <div class="lab">
@@ -133,7 +133,7 @@
 
   </section>
 
-  <section id="contact" data-f>
+  <section id="contact">
     <div class="contact-wrap">
       <div class="contact-heading">
         À la recherche d&apos;une<br>
@@ -150,12 +150,7 @@
   </section>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('[data-f]').forEach(el => obs.observe(el));
+  
 
   function toggleTheme() {
     const html = document.documentElement;
