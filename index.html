@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +17,13 @@
       --sans: 'DM Sans', sans-serif;
     }
 
+    [data-theme="dark"] {
+      --white: #111110;
+      --black: #eeecea;
+      --gray: #888884;
+      --light: #2a2a28;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -26,7 +33,22 @@
       font-weight: 300;
       font-size: 15px;
       line-height: 1.65;
+      transition: background 0.2s, color 0.2s;
     }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--light);
+      color: var(--gray);
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .theme-toggle:hover { border-color: var(--gray); color: var(--black); }
 
     .container {
       max-width: 780px;
@@ -267,6 +289,7 @@
         Bretagne, France<br>
         Administrateur Sys & Réseaux<br>
         <span class="badge">Alternance cyber 2026–2028</span>
+        </div>
       </div>
     </div>
 
@@ -353,6 +376,7 @@
       </div>
       <div class="lab-aside">
         <span class="lab-status">En cours</span>
+        <a class="lab-link" href="lab-hardening.html">Voir le lab →</a>
       </div>
     </div>
 
@@ -368,6 +392,7 @@
       </div>
       <div class="lab-aside">
         <span class="lab-status">En cours</span>
+        <a class="lab-link" href="lab-supervision.html">Voir le lab →</a>
       </div>
     </div>
 
@@ -383,6 +408,7 @@
       </div>
       <div class="lab-aside">
         <span class="lab-status">En cours</span>
+        <a class="lab-link" href="lab-tryhackme.html">Voir le lab →</a>
       </div>
     </div>
 
@@ -413,6 +439,15 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('[data-f]').forEach(el => obs.observe(el));
+  // Theme toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
 </script>
 </body>
 </html>
