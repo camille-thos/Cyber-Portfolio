@@ -280,11 +280,21 @@
   
 
 </div>
+<footer>
+  <span>Camille Thos &mdash; 2026</span>
+  <span class="footer-accent">Blue Team &middot; SecOps &middot; Purple</span>
+  <span>Mis à jour le 19/03/2026</span>
+</footer>
 <script>
-  // Fade in
-  
+  function toggleTheme() {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
 
-  // Accordéon
   document.querySelectorAll('.accordion-trigger').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
@@ -292,31 +302,10 @@
       document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) {
         item.classList.add('open');
-        setTimeout(() => {
-          item.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 50);
+        setTimeout(() => item.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
       }
     });
   });
-
-  // Theme toggle
-  function toggleTheme() {
-    const html = document.documentElement;
-    const current = html.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-  }
-
-  // Restore theme
-  const saved = localStorage.getItem('theme');
-  if (saved) document.documentElement.setAttribute('data-theme', saved);
 </script>
-
-<footer>
-  <span>Camille Thos &mdash; 2026</span>
-  <span class="footer-accent">Blue Team &middot; SecOps &middot; Purple</span>
-  <span>Mis &agrave; jour le 19/03/2026</span>
-</footer>
 </body>
 </html>
