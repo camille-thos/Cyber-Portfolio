@@ -22,6 +22,30 @@
 
 html { scroll-behavior: smooth; }
 
+/* ── FILIGRANE ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('images/filigrane.png');
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] body::before,
+[data-theme="dark"] .container {
+  mix-blend-mode: screen;
+}
+
+.container, .banner, footer, header {
+  position: relative;
+  z-index: 1;
+}
+
 body {
   background: var(--white);
   color: var(--black);
