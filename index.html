@@ -36,6 +36,46 @@
       transition: background 0.2s, color 0.2s;
     }
 
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── HEADER ── */
+    header { padding: 56px 0 0; margin-bottom: 72px; }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .name { font-family: var(--serif); font-size: 44px; line-height: 1; letter-spacing: -0.01em; }
+    .name em { font-style: italic; color: var(--gray); }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .header-meta { text-align: right; font-size: 13px; color: var(--gray); line-height: 2; }
+
+    .badge {
+      display: inline-block;
+      background: var(--black);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+
     .theme-toggle {
       background: none;
       border: 1px solid var(--light);
@@ -50,54 +90,6 @@
     }
     .theme-toggle:hover { border-color: var(--gray); color: var(--black); }
 
-    .container {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    /* ── HEADER ── */
-    header {
-      padding: 56px 0 0;
-      margin-bottom: 72px;
-    }
-
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--light);
-    }
-
-    .name {
-      font-family: var(--serif);
-      font-size: 44px;
-      line-height: 1;
-      letter-spacing: -0.01em;
-    }
-
-    .name em { font-style: italic; color: var(--gray); }
-
-    .header-meta {
-      text-align: right;
-      font-size: 13px;
-      color: var(--gray);
-      line-height: 2;
-    }
-
-    .badge {
-      display: inline-block;
-      background: var(--black);
-      color: var(--white);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      margin-top: 4px;
-    }
-
     .header-intro {
       font-family: var(--serif);
       font-size: 23px;
@@ -106,16 +98,9 @@
       padding: 36px 0;
       border-bottom: 1px solid var(--light);
     }
-
     .header-intro em { font-style: italic; color: var(--gray); }
 
-    nav {
-      display: flex;
-      gap: 28px;
-      padding: 18px 0 0;
-      font-size: 13px;
-    }
-
+    nav { display: flex; gap: 28px; padding: 18px 0 0; font-size: 13px; }
     nav a { color: var(--gray); text-decoration: none; transition: color 0.15s; }
     nav a:hover { color: var(--black); }
 
@@ -133,13 +118,7 @@
       align-items: center;
       gap: 14px;
     }
-
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--light);
-    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--light); }
 
     /* ── ABOUT ── */
     .about-body { max-width: 600px; }
@@ -148,18 +127,10 @@
 
     /* ── SKILLS ── */
     .skills-table { width: 100%; border-collapse: collapse; }
-
     .skills-table tr { border-bottom: 1px solid var(--light); }
     .skills-table tr:first-child { border-top: 1px solid var(--light); }
-
     .skills-table td { padding: 13px 0; vertical-align: top; font-size: 14px; }
-
-    .skills-table td:first-child {
-      width: 190px;
-      color: var(--gray);
-      font-size: 13px;
-      padding-right: 20px;
-    }
+    .skills-table td:first-child { width: 190px; color: var(--gray); font-size: 13px; padding-right: 20px; }
 
     /* ── LABS ── */
     .lab {
@@ -170,51 +141,15 @@
       gap: 20px;
       align-items: start;
     }
-
     .lab:first-child { border-top: 1px solid var(--light); }
-
-    .lab-title {
-      font-family: var(--serif);
-      font-size: 19px;
-      margin-bottom: 6px;
-      line-height: 1.2;
-    }
-
+    .lab-title { font-family: var(--serif); font-size: 19px; margin-bottom: 6px; line-height: 1.2; }
     .lab-desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 14px; max-width: 500px; }
-
     .lab-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-
-    .lab-tag {
-      font-size: 11px;
-      color: var(--gray);
-      border: 1px solid var(--light);
-      padding: 3px 8px;
-      letter-spacing: 0.03em;
-    }
-
+    .lab-tag { font-size: 11px; color: var(--gray); border: 1px solid var(--light); padding: 3px 8px; letter-spacing: 0.03em; }
     .lab-aside { text-align: right; }
-
-    .lab-status {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--gray);
-      display: block;
-      margin-bottom: 8px;
-    }
-
+    .lab-status { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray); display: block; margin-bottom: 8px; }
     .lab-status.on { color: var(--black); }
-
-    .lab-link {
-      font-size: 12px;
-      color: var(--black);
-      text-decoration: none;
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 1px;
-      transition: opacity 0.15s;
-    }
-
+    .lab-link { font-size: 12px; color: var(--black); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; transition: opacity 0.15s; display: block; }
     .lab-link:hover { opacity: 0.4; }
 
     /* ── CONTACT ── */
@@ -228,40 +163,15 @@
       gap: 32px;
       flex-wrap: wrap;
     }
-
-    .contact-heading {
-      font-family: var(--serif);
-      font-size: 30px;
-      line-height: 1.25;
-    }
-
+    .contact-heading { font-family: var(--serif); font-size: 30px; line-height: 1.25; }
     .contact-heading em { font-style: italic; color: var(--gray); }
-
     .contact-links { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
-
-    .clink {
-      font-size: 13px;
-      color: var(--black);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: opacity 0.15s;
-    }
-
+    .clink { font-size: 13px; color: var(--black); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: opacity 0.15s; }
     .clink:hover { opacity: 0.45; }
     .clink::after { content: '↗'; font-size: 10px; color: var(--gray); }
 
     /* ── FOOTER ── */
-    footer {
-      padding: 28px 0 48px;
-      font-size: 12px;
-      color: var(--gray);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    footer { padding: 28px 0 48px; font-size: 12px; color: var(--gray); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 
     /* ── FADE ── */
     [data-f] { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -269,7 +179,7 @@
 
     @media (max-width: 580px) {
       .header-top { flex-direction: column; gap: 20px; }
-      .header-meta { text-align: left; }
+      .header-right { align-items: flex-start; }
       .name { font-size: 34px; }
       .header-intro { font-size: 19px; }
       .lab { grid-template-columns: 1fr; }
@@ -285,10 +195,12 @@
   <header>
     <div class="header-top">
       <h1 class="name">Camille <em>Thos</em></h1>
-      <div class="header-meta">
-        Bretagne, France<br>
-        Administrateur Sys & Réseaux<br>
-        <span class="badge">Alternance cyber 2026–2028</span>
+      <div class="header-right">
+        <button class="theme-toggle" onclick="toggleTheme()">◐ Thème</button>
+        <div class="header-meta">
+          Bretagne, France<br>
+          Administrateur Sys & Réseaux<br>
+          <span class="badge">Alternance cyber 2026–2028</span>
         </div>
       </div>
     </div>
@@ -317,30 +229,12 @@
   <section id="competences" data-f>
     <div class="section-label">Compétences</div>
     <table class="skills-table">
-      <tr>
-        <td>Active Directory</td>
-        <td>GPO, gestion des droits, audit, durcissement</td>
-      </tr>
-      <tr>
-        <td>Analyse de logs</td>
-        <td>Event Viewer, stratégies d'audit Windows, identification d'IOCs</td>
-      </tr>
-      <tr>
-        <td>Réseaux</td>
-        <td>Segmentation VLAN, filtrage, architecture sécurisée</td>
-      </tr>
-      <tr>
-        <td>Supervision</td>
-        <td>Zabbix, alerting, gestion d'incidents N1/N2</td>
-      </tr>
-      <tr>
-        <td>Virtualisation</td>
-        <td>VMware, Proxmox</td>
-      </tr>
-      <tr>
-        <td>Threat simulation</td>
-        <td>TryHackMe, MITRE ATT&amp;CK, scénarios Purple Team</td>
-      </tr>
+      <tr><td>Active Directory</td><td>GPO, gestion des droits, audit, durcissement</td></tr>
+      <tr><td>Analyse de logs</td><td>Event Viewer, stratégies d'audit Windows, identification d'IOCs</td></tr>
+      <tr><td>Réseaux</td><td>Segmentation VLAN, filtrage, architecture sécurisée</td></tr>
+      <tr><td>Supervision</td><td>Zabbix, alerting, gestion d'incidents N1/N2</td></tr>
+      <tr><td>Virtualisation</td><td>VMware, Proxmox</td></tr>
+      <tr><td>Threat simulation</td><td>TryHackMe, MITRE ATT&amp;CK, scénarios Purple Team</td></tr>
     </table>
   </section>
 
@@ -439,7 +333,7 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('[data-f]').forEach(el => obs.observe(el));
-  // Theme toggle
+
   function toggleTheme() {
     const html = document.documentElement;
     const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
