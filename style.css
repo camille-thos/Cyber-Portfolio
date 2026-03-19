@@ -280,9 +280,8 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 48px -9999px 0;
-  padding-left: 9999px;
-  padding-right: 9999px;
+  width: 100%;
+  margin-top: 48px;
 }
 
 body::after {
