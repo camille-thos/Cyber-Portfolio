@@ -24,13 +24,17 @@ html, body { overflow-x: hidden; }
 html { scroll-behavior: smooth; background: var(--accent); }
 
 body {
-  background: var(--white);
+  background: rgba(238,242,247,0.92);
   color: var(--black);
   font-family: var(--sans);
   font-weight: 300;
   font-size: 15px;
   line-height: 1.65;
   transition: background 0.2s, color 0.2s;
+}
+
+[data-theme="dark"] body {
+  background: rgba(11,21,32,0.92);
 }
 
 /* ── FILIGRANE ── */
@@ -56,11 +60,6 @@ body::before {
   max-width: 780px;
   margin: 0 auto;
   padding: 0 48px 48px;
-  background: rgba(255,255,255,0.60);
-}
-
-[data-theme="dark"] .container {
-  background: rgba(11,21,32,0.70);
 }
 
 /* ── BANNER ── */
