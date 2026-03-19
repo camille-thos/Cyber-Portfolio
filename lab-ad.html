@@ -24,7 +24,7 @@
     </div>
   </header>
 
-  <div class="breadcrumb" data-f>
+  <div class="breadcrumb">
     <a href="index.html">Accueil</a>
     <span>/</span>
     <a href="index.html#labs">Labs</a>
@@ -32,7 +32,7 @@
     Active Directory — Attaque & Défense
   </div>
 
-  <div class="lab-header" data-f>
+  <div class="lab-header">
     <div class="lab-meta">
       <span class="lab-num">Lab 01</span>
       <span class="lab-status">Publié</span>
@@ -50,7 +50,7 @@
     <a class="lab-github" href="https://github.com/camille-thos/Cyber-Portfolio/tree/main/AD-Lab-Attack-Defense" target="_blank">Voir sur GitHub ↗</a>
   </div>
 
-  <section data-f>
+  <section>
     <div class="section-label">Phases</div>
     <div class="accordion">
 
@@ -259,7 +259,7 @@
     </div>
   </section>
 
-  <section data-f>
+  <section>
     <div class="section-label">Objectifs atteints</div>
     <ul class="obj-list">
       <li><span class="obj-check">✓</span> Comprendre les techniques d'attaque courantes en environnement Active Directory</li>
@@ -271,7 +271,7 @@
     </ul>
   </section>
 
-  <div class="lab-nav" data-f>
+  <div class="lab-nav">
     <span style="color:var(--light)">←</span>
     <a href="index.html#labs">Tous les labs</a>
     <span style="color:var(--light)">→</span>
@@ -282,10 +282,7 @@
 </div>
 <script>
   // Fade in
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('[data-f]').forEach(el => obs.observe(el));
+  
 
   // Accordéon
   document.querySelectorAll('.accordion-trigger').forEach(btn => {
