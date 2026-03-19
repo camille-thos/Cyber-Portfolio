@@ -50,7 +50,18 @@ body {
   transition: background 0.2s, color 0.2s;
 }
 
-.container { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 48px 48px;
+  background: rgba(255,255,255,0.60);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+[data-theme="dark"] .container {
+  background: rgba(11,21,32,0.70);
+}
 
 /* ── BANNER ── */
 .banner {
@@ -150,18 +161,6 @@ section { margin-bottom: 64px; }
   gap: 14px;
 }
 .section-label::after { content: ''; flex: 1; height: 1px; background: var(--light); }
-
-/* ── SECTION CARD ── */
-section {
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(4px);
-  padding: 32px;
-  border-radius: 2px;
-}
-
-[data-theme="dark"] section {
-  background: rgba(11,21,32,0.65);
-}
 
 /* ── ABOUT ── */
 .about-body { max-width: 600px; }
