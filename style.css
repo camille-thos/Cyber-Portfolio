@@ -21,6 +21,7 @@
 }
 
 html { scroll-behavior: smooth; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
 
 /* ── FILIGRANE ── */
 body::before {
@@ -48,6 +49,8 @@ body {
   font-size: 15px;
   line-height: 1.65;
   transition: background 0.2s, color 0.2s;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .container {
@@ -277,13 +280,18 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 48px;
+  margin-top: 0;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   width: 100vw;
+  box-sizing: border-box;
+}
+
+body::after {
+  content: none;
 }
 footer span { color: rgba(255,255,255,0.75); }
 footer .footer-accent { color: #fff; font-weight: 500; }
