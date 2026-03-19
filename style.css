@@ -20,7 +20,7 @@
   --accent-dim: rgba(74,158,221,0.12);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--accent); }
 body { min-height: 100vh; display: flex; flex-direction: column; }
 
 /* ── FILIGRANE ── */
