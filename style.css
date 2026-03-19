@@ -30,7 +30,7 @@ body::before {
   background-image: url('images/filigrane.png');
   background-size: 400px 400px;
   background-repeat: repeat;
-  opacity: 0.12;
+  opacity: 0.06;
   pointer-events: none;
   z-index: 0;
 }
@@ -150,6 +150,18 @@ section { margin-bottom: 64px; }
   gap: 14px;
 }
 .section-label::after { content: ''; flex: 1; height: 1px; background: var(--light); }
+
+/* ── SECTION CARD ── */
+section {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(4px);
+  padding: 32px;
+  border-radius: 2px;
+}
+
+[data-theme="dark"] section {
+  background: rgba(11,21,32,0.65);
+}
 
 /* ── ABOUT ── */
 .about-body { max-width: 600px; }
