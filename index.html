@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camille Thos</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="banner">
+  &#128269; Recherche alternance en cybersécurité — Blue Team / SecOps — Bretagne — Octobre 2026
+  <a href="CV_THOS_CAMILLE.pdf" target="_blank">Télécharger mon CV →</a>
+</div>
+
+<div class="container">
+
+  <header>
+    <div class="header-top">
+      <h1 class="name">Camille <em>Thos</em></h1>
+      <div class="header-right">
+        <button class="theme-toggle" onclick="toggleTheme()">&#9680; Thème</button>
+        <div class="header-meta">
+          Bretagne, France<br>
+          Administrateur Sys &amp; Réseaux<br>
+          <span class="badge">Alternance cyber 2026&ndash;2028</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="header-intro">
+      3 ans d&apos;expérience dont 2 en alternance,<br>
+      <em>maintenant orienté cybersécurité opérationnelle.</em>
+    </p>
+
+    <nav>
+      <a href="#apropos">À propos</a>
+      <a href="#competences">Compétences</a>
+      <a href="#labs">Labs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="apropos" data-f>
+    <div class="section-label">À propos</div>
+    <div class="about-body">
+      <p>Je m&apos;appelle Camille THOS, j&apos;ai 27 ans. Au fil de mes formations (TAI au GRETA de Morlaix, TSSR à l&apos;ENI, puis Administrateur d&apos;Infrastructures Sécurisées à l&apos;AFPA de Rennes), je me suis découvert un vrai intérêt pour la cybersécurité. Pas uniquement sur l&apos;aspect technique, mais aussi sur la prévention : sensibiliser, anticiper, comprendre comment une organisation se protège avant même qu&apos;une attaque survienne.</p>
+      <p>Aujourd&apos;hui je construis cette spécialisation de façon concrète, avec une approche Purple Team : simuler des attaques pour mieux défendre. Mes labs AD, la détection sous Wazuh, les write-ups TryHackMe : tout ça c&apos;est une façon de prouver par la pratique ce que je suis capable de faire. Je cherche une alternance Blue Team / SecOps pour 2026&ndash;2028 afin de continuer à progresser dans un vrai contexte professionnel.</p>
+    </div>
+  </section>
+
+  <section id="competences" data-f>
+    <div class="section-label">Compétences</div>
+    <table class="skills-table">
+      <tr><td>Active Directory</td><td>GPO, gestion des droits, audit, durcissement</td></tr>
+      <tr><td>Analyse de logs</td><td>Event Viewer, stratégies d&apos;audit Windows, identification d&apos;IOCs</td></tr>
+      <tr><td>Réseaux</td><td>Segmentation VLAN, filtrage, architecture sécurisée</td></tr>
+      <tr><td>Supervision</td><td>Zabbix, alerting, gestion d&apos;incidents N1/N2</td></tr>
+      <tr><td>Virtualisation</td><td>VMware, Proxmox, Hyper-V</td></tr>
+      <tr><td>Threat simulation</td><td>TryHackMe, MITRE ATT&amp;CK, scénarios Purple Team</td></tr>
+      <tr><td>SIEM</td><td>Wazuh — déploiement, règles de détection, active response</td></tr>
+    </table>
+  </section>
+
+  <section id="labs" data-f>
+    <div class="section-label">Labs</div>
+
+    <div class="lab">
+      <div>
+        <div class="lab-title">Active Directory — Attaque &amp; Défense</div>
+        <div class="lab-desc">Simulation de scénarios d&apos;attaque sur un environnement AD, analyse des événements générés, détection et réponse automatisée avec Wazuh.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Active Directory</span>
+          <span class="lab-tag">Event Logs</span>
+          <span class="lab-tag">Wazuh</span>
+          <span class="lab-tag">MITRE ATT&amp;CK</span>
+        </div>
+      </div>
+      <div class="lab-aside">
+        <span class="lab-status on">Publié</span>
+        <a class="lab-link" href="lab-ad.html">Voir le lab →</a>
+      </div>
+    </div>
+
+    <div class="lab">
+      <div>
+        <div class="lab-title">Hardening Windows Server</div>
+        <div class="lab-desc">Application de bonnes pratiques de sécurisation (CIS Benchmarks) et analyse comparative avant / après configuration.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Windows Server</span>
+          <span class="lab-tag">CIS Benchmark</span>
+          <span class="lab-tag">Audit</span>
+        </div>
+      </div>
+      <div class="lab-aside">
+        <span class="lab-status">En cours</span>
+        <a class="lab-link" href="lab-hardening.html">Voir le lab →</a>
+      </div>
+    </div>
+
+    <div class="lab">
+      <div>
+        <div class="lab-title">Supervision &amp; Détection d&apos;incidents</div>
+        <div class="lab-desc">Mise en place d&apos;une stack de supervision, étude d&apos;événements anormaux et règles d&apos;alerting.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">Zabbix</span>
+          <span class="lab-tag">Alerting</span>
+          <span class="lab-tag">SIEM</span>
+        </div>
+      </div>
+      <div class="lab-aside">
+        <span class="lab-status">En cours</span>
+        <a class="lab-link" href="lab-supervision.html">Voir le lab →</a>
+      </div>
+    </div>
+
+    <div class="lab">
+      <div>
+        <div class="lab-title">Analyses TryHackMe — SecOps</div>
+        <div class="lab-desc">Scénarios de sécurité opérationnelle avec restitution structurée des techniques et mise en correspondance MITRE ATT&amp;CK.</div>
+        <div class="lab-tags">
+          <span class="lab-tag">TryHackMe</span>
+          <span class="lab-tag">MITRE ATT&amp;CK</span>
+          <span class="lab-tag">Write-ups</span>
+        </div>
+      </div>
+      <div class="lab-aside">
+        <span class="lab-status">En cours</span>
+        <a class="lab-link" href="lab-tryhackme.html">Voir le lab →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contact" data-f>
+    <div class="contact-wrap">
+      <div class="contact-heading">
+        À la recherche d&apos;une<br>
+        <em>alternance en cybersécurité</em><br>
+        pour 2026&ndash;2028.
+      </div>
+      <div class="contact-links">
+        <a class="clink" href="mailto:thoscamille29@gmail.com">thoscamille29@gmail.com</a>
+        <a class="clink" href="CV_THOS_CAMILLE.pdf" target="_blank">Télécharger le CV</a>
+        <a class="clink" href="https://github.com/camille-thos/Cyber-Portfolio" target="_blank">GitHub Portfolio</a>
+        <a class="clink" href="https://www.linkedin.com/in/camille-thos" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Camille Thos &mdash; 2026</span>
+    <span class="footer-accent">Blue Team &middot; SecOps &middot; Purple</span>
+    <span>Mis à jour le 19/03/2026</span>
+  </footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('[data-f]').forEach(el => obs.observe(el));
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+</script>
+</body>
+</html>
