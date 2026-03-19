@@ -20,8 +20,8 @@
   --accent-dim: rgba(74,158,221,0.12);
 }
 
-html { scroll-behavior: smooth; background: var(--accent); }
-body { min-height: 100vh; display: flex; flex-direction: column; }
+html { scroll-behavior: smooth; background: var(--accent); overflow-x: hidden; }
+
 
 /* ── FILIGRANE ── */
 body::before {
@@ -280,14 +280,9 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 0;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  box-sizing: border-box;
+  margin: 48px -9999px 0;
+  padding-left: 9999px;
+  padding-right: 9999px;
 }
 
 body::after {
