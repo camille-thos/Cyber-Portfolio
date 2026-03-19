@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +17,13 @@
       --sans: 'DM Sans', sans-serif;
     }
 
+    [data-theme="dark"] {
+      --white: #111110;
+      --black: #eeecea;
+      --gray: #888884;
+      --light: #2a2a28;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -26,13 +33,10 @@
       font-weight: 300;
       font-size: 15px;
       line-height: 1.65;
+      transition: background 0.2s, color 0.2s;
     }
 
-    .container {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 32px; }
 
     /* ── HEADER ── */
     header { padding: 56px 0 0; margin-bottom: 72px; }
@@ -48,222 +52,95 @@
     .name { font-family: var(--serif); font-size: 44px; line-height: 1; letter-spacing: -0.01em; }
     .name em { font-style: italic; color: var(--gray); }
 
+    .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+
     .header-meta { text-align: right; font-size: 13px; color: var(--gray); line-height: 2; }
 
-    nav { display: flex; gap: 28px; padding: 18px 0 0; font-size: 13px; }
-    nav a { color: var(--gray); text-decoration: none; transition: color 0.15s; }
-    nav a:hover, nav a.active { color: var(--black); }
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--light);
+      color: var(--gray);
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .theme-toggle:hover { border-color: var(--gray); color: var(--black); }
 
     /* ── BREADCRUMB ── */
-    .breadcrumb {
-      font-size: 12px;
-      color: var(--gray);
-      margin-bottom: 48px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .breadcrumb { font-size: 12px; color: var(--gray); margin-bottom: 48px; display: flex; align-items: center; gap: 8px; }
     .breadcrumb a { color: var(--gray); text-decoration: none; transition: color 0.15s; }
     .breadcrumb a:hover { color: var(--black); }
     .breadcrumb span { color: var(--light); }
 
     /* ── LAB HEADER ── */
     .lab-header { margin-bottom: 64px; }
-
     .lab-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
-
-    .lab-num {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray);
-    }
-
-    .lab-status {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--black);
-      border: 1px solid var(--light);
-      padding: 3px 10px;
-    }
-
-    .lab-title {
-      font-family: var(--serif);
-      font-size: clamp(28px, 5vw, 42px);
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-    }
-
-    .lab-intro {
-      font-size: 15px;
-      color: var(--gray);
-      max-width: 580px;
-      line-height: 1.75;
-      margin-bottom: 24px;
-    }
-
+    .lab-num { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+    .lab-status { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--black); border: 1px solid var(--light); padding: 3px 10px; }
+    .lab-title { font-family: var(--serif); font-size: clamp(28px, 5vw, 42px); line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 20px; }
+    .lab-intro { font-size: 15px; color: var(--gray); max-width: 580px; line-height: 1.75; margin-bottom: 24px; }
     .lab-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
-
-    .lab-tag {
-      font-size: 11px;
-      color: var(--gray);
-      border: 1px solid var(--light);
-      padding: 3px 8px;
-      letter-spacing: 0.03em;
-    }
-
-    .lab-github {
-      font-size: 12px;
-      color: var(--black);
-      text-decoration: none;
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 1px;
-      transition: opacity 0.15s;
-    }
+    .lab-tag { font-size: 11px; color: var(--gray); border: 1px solid var(--light); padding: 3px 8px; letter-spacing: 0.03em; }
+    .lab-github { font-size: 12px; color: var(--black); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; transition: opacity 0.15s; }
     .lab-github:hover { opacity: 0.4; }
 
     /* ── SECTION LABEL ── */
-    .section-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
     .section-label::after { content: ''; flex: 1; height: 1px; background: var(--light); }
-
     section { margin-bottom: 64px; }
+    p { font-size: 15px; line-height: 1.8; max-width: 620px; }
+    p + p { margin-top: 14px; }
 
     /* ── ACCORDÉON ── */
     .accordion { border-top: 1px solid var(--light); }
-
     .accordion-item { border-bottom: 1px solid var(--light); }
-
-    .accordion-trigger {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 22px 0;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      cursor: pointer;
-      text-align: left;
-      transition: opacity 0.15s;
-    }
-
+    .accordion-trigger { width: 100%; background: none; border: none; padding: 22px 0; display: flex; align-items: center; gap: 20px; cursor: pointer; text-align: left; transition: opacity 0.15s; }
     .accordion-trigger:hover { opacity: 0.7; }
-
-    .accordion-num {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gray);
-      flex-shrink: 0;
-      width: 60px;
-    }
-
-    .accordion-title {
-      font-family: var(--serif);
-      font-size: 18px;
-      color: var(--black);
-      flex: 1;
-    }
-
-    .accordion-icon {
-      font-size: 18px;
-      color: var(--gray);
-      flex-shrink: 0;
-      transition: transform 0.3s ease;
-      line-height: 1;
-    }
-
+    .accordion-num { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); flex-shrink: 0; width: 60px; }
+    .accordion-title { font-family: var(--serif); font-size: 18px; color: var(--black); flex: 1; }
+    .accordion-icon { font-size: 18px; color: var(--gray); flex-shrink: 0; transition: transform 0.3s ease; line-height: 1; }
     .accordion-item.open .accordion-icon { transform: rotate(45deg); }
-
-    .accordion-body {
-      display: none;
-      padding: 0 0 28px 80px;
-    }
-
+    .accordion-body { display: none; padding: 0 0 28px 80px; }
     .accordion-item.open .accordion-body { display: block; }
+    .accordion-body p { font-size: 14px; color: var(--gray); line-height: 1.75; max-width: 540px; margin-bottom: 16px; }
 
-    .accordion-body p {
-      font-size: 14px;
-      color: var(--gray);
-      line-height: 1.75;
-      max-width: 540px;
-      margin-bottom: 16px;
-    }
-
-    /* ── INFRA TABLE ── */
-    .infra-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    .infra-table tr { border-bottom: 1px solid var(--light); }
-    .infra-table tr:first-child { border-top: 1px solid var(--light); }
-    .infra-table th { padding: 10px 0; font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray); text-align: left; }
-    .infra-table td { padding: 12px 0; font-size: 13px; vertical-align: top; }
-    .infra-table td:first-child { width: 110px; font-weight: 500; }
-    .infra-table td:nth-child(2) { color: var(--gray); }
-    .infra-table td:last-child { font-family: monospace; font-size: 12px; color: var(--gray); }
-
-    /* ── EVENT TABLE ── */
-    .event-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    .event-table tr { border-bottom: 1px solid var(--light); }
-    .event-table tr:first-child { border-top: 1px solid var(--light); }
-    .event-table th { padding: 10px 0; font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray); text-align: left; }
-    .event-table td { padding: 12px 0; font-size: 13px; color: var(--gray); }
+    /* ── TABLES ── */
+    .infra-table, .event-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .infra-table tr, .event-table tr { border-bottom: 1px solid var(--light); }
+    .infra-table tr:first-child, .event-table tr:first-child { border-top: 1px solid var(--light); }
+    .infra-table th, .event-table th { padding: 10px 0; font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray); text-align: left; }
+    .infra-table td, .event-table td { padding: 12px 0; font-size: 13px; color: var(--gray); vertical-align: top; }
+    .infra-table td:first-child { width: 110px; font-weight: 500; color: var(--black); }
     .event-table td:first-child { font-family: monospace; font-size: 12px; color: var(--black); width: 80px; }
 
     /* ── SCREENSHOT ── */
-    .screenshot {
-      border: 1px solid var(--light);
-      background: #f4f4f2;
-      aspect-ratio: 16/9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: var(--gray);
-      margin: 16px 0;
-      letter-spacing: 0.03em;
-    }
+    .screenshot { border: 1px solid var(--light); background: var(--light); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--gray); margin: 16px 0; letter-spacing: 0.03em; }
+
+    /* ── IMG ── */
+    .lab-img { width: 100%; border: 1px solid var(--light); margin: 16px 0; display: block; }
 
     /* ── OBJ LIST ── */
     .obj-list { list-style: none; max-width: 580px; }
-    .obj-list li { padding: 12px 0; border-bottom: 1px solid var(--light); font-size: 14px; display: flex; gap: 16px; align-items: baseline; }
+    .obj-list li { padding: 12px 0; border-bottom: 1px solid var(--light); font-size: 14px; display: flex; gap: 16px; align-items: baseline; color: var(--gray); }
     .obj-list li:first-child { border-top: 1px solid var(--light); }
     .obj-check { color: var(--gray); font-size: 11px; flex-shrink: 0; }
 
+    /* ── CODE ── */
+    code { font-size: 12px; background: var(--light); padding: 2px 6px; font-family: monospace; }
+    .path { font-size: 12px; color: var(--gray); font-family: monospace; background: var(--light); padding: 10px; line-height: 1.8; display: block; margin: 8px 0; }
+
     /* ── NAV LABS ── */
-    .lab-nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 32px 0 48px;
-      border-top: 1px solid var(--light);
-      font-size: 13px;
-    }
+    .lab-nav { display: flex; justify-content: space-between; padding: 32px 0 48px; border-top: 1px solid var(--light); font-size: 13px; }
     .lab-nav a { color: var(--gray); text-decoration: none; transition: color 0.15s; }
     .lab-nav a:hover { color: var(--black); }
 
     /* ── FOOTER ── */
-    footer {
-      padding: 28px 0 48px;
-      font-size: 12px;
-      color: var(--gray);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      border-top: 1px solid var(--light);
-    }
+    footer { padding: 28px 0 48px; font-size: 12px; color: var(--gray); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--light); }
 
     /* ── FADE ── */
     [data-f] { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -271,6 +148,7 @@
 
     @media (max-width: 580px) {
       .header-top { flex-direction: column; gap: 20px; }
+      .header-right { align-items: flex-start; }
       .header-meta { text-align: left; }
       .name { font-size: 34px; }
       .accordion-body { padding-left: 0; }
@@ -283,18 +161,11 @@
   <header>
     <div class="header-top">
       <a href="index.html" style="text-decoration:none"><h1 class="name">Camille <em>Thos</em></h1></a>
-      <div class="header-meta">
-        Bretagne, France<br>
-        Administrateur Sys & Réseaux
+      <div class="header-right">
+        <button class="theme-toggle" onclick="toggleTheme()">◐ Thème</button>
+        <div class="header-meta">Bretagne, France<br>Administrateur Sys & Réseaux</div>
       </div>
     </div>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="index.html#apropos">À propos</a>
-      <a href="index.html#competences">Compétences</a>
-      <a href="index.html#labs" class="active">Labs</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
   </header>
 
   <div class="breadcrumb" data-f>
@@ -323,10 +194,8 @@
     <a class="lab-github" href="https://github.com/camille-thos/Cyber-Portfolio/tree/main/AD-Lab-Attack-Defense" target="_blank">Voir sur GitHub ↗</a>
   </div>
 
-  <!-- PHASES EN ACCORDÉON -->
   <section data-f>
     <div class="section-label">Phases</div>
-
     <div class="accordion">
 
       <!-- PHASE 01 -->
@@ -356,19 +225,19 @@
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Machines virtuelles</p>
           <p><strong style="color:var(--black)">OPNsense</strong> — Firewall assurant la segmentation entre les réseaux. Interfaces : WAN (accès externe optionnel), LAN (réseau interne), OPT1 (réseau attaquant).</p>
-          <p style="margin-top:10px"><strong style="color:var(--black)">DC01 — Windows Server 2025</strong> — Active Directory Domain Services, DNS. Domaine : <code style="font-size:12px;background:#f0f0ee;padding:2px 6px">lab.local</code></p>
+          <p style="margin-top:10px"><strong style="color:var(--black)">DC01 — Windows Server 2025</strong> — Active Directory Domain Services, DNS. Domaine : <code>lab.local</code></p>
           <p style="margin-top:10px"><strong style="color:var(--black)">CLIENT01 — Windows 10</strong> — Poste utilisateur joint au domaine, utilisé pour générer de l'activité légitime.</p>
           <p style="margin-top:10px"><strong style="color:var(--black)">KALI01</strong> — Machine utilisée pour simuler des attaques provenant d'un réseau distinct.</p>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Organisation Active Directory</p>
           <p>L'AD est structuré avec trois unités organisationnelles représentant les services de l'entreprise. Chaque OU contient un dossier Utilisateurs, Groupes et Ordinateurs. Cette organisation permet d'appliquer des GPO ciblées, de simuler des délégations d'administration et de reproduire des cas réalistes d'élévation de privilèges.</p>
-          <ul style="margin-top:10px; margin-left:16px; font-size:13px; color:var(--gray); line-height:2;">
+          <ul style="margin-top:10px; margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
             <li>UO_Comptabilite</li>
             <li>UO_IT</li>
             <li>UO_RH</li>
           </ul>
 
-          <img src="images/ADGLP.png" alt="Structure Active Directory — OUs Comptabilité, IT, RH" style="width:100%; border:1px solid var(--light); margin-top:20px;" />
+          <img class="lab-img" src="images/ADGLP.png" alt="Structure Active Directory — OUs Comptabilité, IT, RH" />
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Validation</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
@@ -388,13 +257,13 @@
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-body">
-          <p>Mise en place de la journalisation de sécurité sur l'environnement Active Directory afin de rendre l'infrastructure observable avant toute simulation d'attaque. L'objectif est d'établir un comportement normal (baseline) du domaine pour permettre une analyse pertinente lors des phases suivantes.</p>
+          <p>Mise en place de la journalisation de sécurité sur l'environnement Active Directory afin de rendre l'infrastructure observable avant toute simulation d'attaque. L'objectif est d'établir un comportement normal (baseline) du domaine.</p>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Activation des stratégies d'audit</p>
           <p>Les audits ont été configurés via une stratégie de groupe appliquée aux contrôleurs de domaine.</p>
-          <p style="font-size:12px; color:var(--gray); margin-top:8px; font-family:monospace; background:#f4f4f2; padding:10px; line-height:1.8;">Default Domain Controllers Policy → Configuration ordinateur → Paramètres Windows → Paramètres de sécurité → Configuration avancée de la stratégie d'audit</p>
+          <span class="path">Default Domain Controllers Policy → Configuration ordinateur → Paramètres Windows → Paramètres de sécurité → Configuration avancée de la stratégie d'audit</span>
 
-          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Catégories activées</p>
+          <p style="font-weight:500; color:var(--black); margin-top:16px; margin-bottom:8px;">Catégories activées</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
             <li>Ouverture de session : Succès / Échec</li>
             <li>Gestion des comptes utilisateurs : Succès</li>
@@ -402,10 +271,10 @@
             <li>Utilisation des privilèges sensibles : Succès / Échec</li>
           </ul>
 
-          <img src="https://raw.githubusercontent.com/camille-thos/Cyber-Portfolio/main/AD-Lab-Attack-Defense/02-Observabilite-et-Baseline/images/GPO.png" alt="Configuration des stratégies d'audit GPO" style="width:100%; border:1px solid var(--light); margin-top:20px;" />
+          <img class="lab-img" src="images/GPO.png" alt="Configuration des stratégies d'audit GPO" />
 
-          <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Validation de la journalisation</p>
-          <p>Les événements ont été vérifiés sur le contrôleur de domaine via l'Observateur d'événements → Journaux Windows → Sécurité.</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Validation de la journalisation</p>
+          <p>Vérification via Observateur d'événements → Journaux Windows → Sécurité.</p>
           <table class="event-table" style="margin-top:12px;">
             <tr><th>Event ID</th><th>Description</th></tr>
             <tr><td>4624</td><td>Ouverture de session réussie</td></tr>
@@ -413,13 +282,13 @@
             <tr><td>4672</td><td>Attribution de privilèges spéciaux</td></tr>
           </table>
 
-          <img src="https://raw.githubusercontent.com/camille-thos/Cyber-Portfolio/main/AD-Lab-Attack-Defense/02-Observabilite-et-Baseline/images/eventviewer_security.png" alt="Journaux de sécurité Event Viewer" style="width:100%; border:1px solid var(--light); margin-top:20px;" />
+          <img class="lab-img" src="images/eventviewer_security.png" alt="Journaux de sécurité Event Viewer" />
 
-          <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Établissement d'une baseline</p>
-          <p>Une activité légitime a été générée depuis CLIENT01 pour observer le comportement normal du domaine : ouverture de session, déconnexion/reconnexion, accès aux ressources, administration AD et trafic réseau standard. Cette étape permet de différencier ultérieurement une activité normale d'un comportement suspect.</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Établissement d'une baseline</p>
+          <p>Activité légitime générée depuis CLIENT01 : ouverture de session, déconnexion/reconnexion, accès aux ressources, administration AD et trafic réseau standard. Cette étape permet de différencier une activité normale d'un comportement suspect.</p>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Résultat</p>
-          <p>L'infrastructure produit désormais des journaux de sécurité exploitables. Le domaine est prêt pour la phase suivante : simulation d'attaques et analyse des traces générées.</p>
+          <p>L'infrastructure produit désormais des journaux de sécurité exploitables. Le domaine est prêt pour la phase suivante.</p>
         </div>
       </div>
 
@@ -431,10 +300,10 @@
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-body">
-          <p>Simulation d'une attaque par brute force sur le service RDP afin d'observer les traces générées dans les journaux Windows et valider la configuration d'audit mise en place lors de la phase précédente.</p>
+          <p>Simulation d'une attaque par brute force sur le service RDP afin d'observer les traces générées dans les journaux Windows et valider la configuration d'audit de la phase précédente.</p>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Contexte</p>
-          <table class="infra-table" style="margin-bottom:4px;">
+          <table class="infra-table">
             <tr><th>Rôle</th><th>Machine</th><th>IP</th></tr>
             <tr><td>Cible</td><td>DC01 — RDP TCP 3389</td><td>192.168.2.2</td></tr>
             <tr><td>Attaquant</td><td>KALI01</td><td>192.168.3.10</td></tr>
@@ -442,23 +311,23 @@
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 1 — Découverte du service</p>
           <p>Vérification de l'exposition du service RDP depuis le réseau attaquant. Résultat : port 3389 ouvert, service ms-wbt-server détecté.</p>
-          <img src="https://raw.githubusercontent.com/camille-thos/Cyber-Portfolio/main/AD-Lab-Attack-Defense/03-Detection-dune-attaque-par-brute-force-RDP/images/port.png" alt="Scan port 3389 depuis KALI01" style="width:100%; border:1px solid var(--light); margin-top:16px;" />
+          <img class="lab-img" src="images/port.png" alt="Scan du port 3389 depuis KALI01" />
 
-          <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Étape 2 — Simulation du brute force</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 2 — Simulation du brute force</p>
           <p>Multiples tentatives d'authentification générées depuis Kali. Résultats : multiples tentatives échouées, puis découverte d'un mot de passe valide.</p>
-          <img src="https://raw.githubusercontent.com/camille-thos/Cyber-Portfolio/main/AD-Lab-Attack-Defense/03-Detection-dune-attaque-par-brute-force-RDP/images/gen_log.png" alt="Génération des logs brute force" style="width:100%; border:1px solid var(--light); margin-top:16px;" />
+          <img class="lab-img" src="images/gen_log.png" alt="Génération des logs brute force" />
 
-          <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Étape 3 — Analyse des journaux Windows</p>
-          <p>Analyse via Observateur d'événements → Journaux Windows → Sécurité. Comportement identifié : succession rapide d'échecs d'authentification depuis la même IP, suivie d'une connexion réussie.</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 3 — Analyse des journaux Windows</p>
+          <p>Analyse via Observateur d'événements → Journaux Windows → Sécurité.</p>
           <table class="event-table" style="margin-top:12px; margin-bottom:16px;">
             <tr><th>Event ID</th><th>Description</th></tr>
             <tr><td>4625</td><td>Échec de connexion</td></tr>
             <tr><td>4624</td><td>Connexion réussie</td></tr>
             <tr><td>4776</td><td>Validation des identifiants</td></tr>
           </table>
-          <img src="https://raw.githubusercontent.com/camille-thos/Cyber-Portfolio/main/AD-Lab-Attack-Defense/03-Detection-dune-attaque-par-brute-force-RDP/images/logs.png" alt="Event Viewer — logs brute force RDP" style="width:100%; border:1px solid var(--light); margin-top:4px;" />
+          <img class="lab-img" src="images/logs.png" alt="Event Viewer, corrélation Event ID 4625 / 4624" />
 
-          <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Indices détectables</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Indices détectables</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
             <li>Grand nombre d'Event ID 4625 en peu de temps</li>
             <li>Même compte ciblé, même source réseau</li>
@@ -467,7 +336,7 @@
           </ul>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Conclusion</p>
-          <p>L'environnement permet d'identifier une tentative de brute force, d'analyser les journaux Windows et de préparer la mise en place d'une réponse automatisée — objet de la Phase 04.</p>
+          <p>L'environnement permet d'identifier une tentative de brute force et de préparer la mise en place d'une réponse automatisée — objet de la Phase 04.</p>
         </div>
       </div>
 
@@ -491,7 +360,7 @@
           </table>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Événements surveillés</p>
-          <table class="event-table" style="margin-bottom:4px;">
+          <table class="event-table">
             <tr><th>Event ID</th><th>Description</th></tr>
             <tr><td>4625</td><td>Échec d'authentification</td></tr>
             <tr><td>4624</td><td>Ouverture de session réussie</td></tr>
@@ -503,30 +372,30 @@
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Règles de détection</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2; margin-bottom:8px;">
-            <li><strong style="color:var(--black)">Brute force RDP</strong> — plus de 5 Event ID 4625 en moins de 60 secondes depuis la même IP → alerte niveau 10</li>
-            <li><strong style="color:var(--black)">Authentification réussie après échecs</strong> — Event ID 4624 immédiatement après une série de 4625 → alerte niveau 12</li>
-            <li><strong style="color:var(--black)">Création de compte hors baseline</strong> — Event ID 4720 depuis un compte non attendu → alerte niveau 8</li>
+            <li><strong style="color:var(--black)">Brute force RDP</strong> — plus de 5 Event ID 4625 en moins de 60 secondes → alerte niveau 10</li>
+            <li><strong style="color:var(--black)">Auth réussie après échecs</strong> — Event ID 4624 après série de 4625 → alerte niveau 12</li>
+            <li><strong style="color:var(--black)">Création de compte hors baseline</strong> — Event ID 4720 inattendu → alerte niveau 8</li>
           </ul>
-          <div class="screenshot">Capture — Dashboard Wazuh, alertes brute force RDP détectées</div>
+          <div class="screenshot">Capture — Dashboard Wazuh, alertes brute force RDP</div>
           <div class="screenshot">Capture — Corrélation Event ID 4625 + 4624 dans Wazuh</div>
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Réponse automatisée</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2; margin-bottom:8px;">
-            <li><strong style="color:var(--black)">Blocage IP</strong> — déclencheur niveau ≥ 10 : l'IP source est bloquée automatiquement via firewall-drop</li>
-            <li><strong style="color:var(--black)">Désactivation de compte</strong> — déclencheur niveau ≥ 12 : script PowerShell déclenché sur DC01 via l'agent, le compte compromis est suspendu</li>
+            <li><strong style="color:var(--black)">Blocage IP</strong> — niveau ≥ 10 : l'IP source est bloquée automatiquement via firewall-drop</li>
+            <li><strong style="color:var(--black)">Désactivation de compte</strong> — niveau ≥ 12 : script PowerShell déclenché sur DC01, compte compromis suspendu</li>
           </ul>
           <div class="screenshot">Capture — IP 192.168.3.10 bloquée automatiquement</div>
-          <div class="screenshot">Capture — Compte désactivé dans AD après déclenchement automatique</div>
+          <div class="screenshot">Capture — Compte désactivé dans AD après déclenchement</div>
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Validation</p>
-          <p>Le scénario de la Phase 03 est rejoué pour vérifier la chaîne complète : KALI01 lance le brute force → Wazuh détecte → active response déclenche → IP bloquée → alerte visible dans le dashboard.</p>
-          <div class="screenshot">Capture — Timeline des alertes Wazuh lors du rejeu du scénario</div>
+          <p>Le scénario de la Phase 03 est rejoué : KALI01 lance le brute force → Wazuh détecte → active response déclenche → IP bloquée → alerte visible dans le dashboard.</p>
+          <div class="screenshot">Capture — Timeline des alertes Wazuh lors du rejeu</div>
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Limites et pistes d'amélioration</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
             <li>Seuils calibrés pour le lab — à ajuster en production selon la baseline réelle</li>
             <li>La désactivation de compte peut générer des faux positifs — une couche SOAR serait nécessaire en production</li>
-            <li>Piste suivante : intégrer Sysmon pour détecter des techniques plus avancées (Pass-the-Hash, Kerberoasting)</li>
+            <li>Piste suivante : intégrer Sysmon pour détecter des techniques avancées (Pass-the-Hash, Kerberoasting)</li>
           </ul>
         </div>
       </div>
@@ -534,7 +403,6 @@
     </div>
   </section>
 
-  <!-- OBJECTIFS -->
   <section data-f>
     <div class="section-label">Objectifs atteints</div>
     <ul class="obj-list">
@@ -575,6 +443,19 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  // Theme toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+
+  // Restore theme
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
 </script>
 </body>
 </html>
