@@ -76,7 +76,7 @@
           <table class="infra-table">
             <tr><th>Machine</th><th>Rôle</th><th>IP</th></tr>
             <tr><td>OPNsense</td><td>Gateway OPT1</td><td>192.168.3.1</td></tr>
-            <tr><td>KALI01</td><td>Machine d'attaque</td><td>192.168.3.10</td></tr>
+            <tr><td>KALI01</td><td>Machine d'attaque</td><td>192.168.3.2</td></tr>
           </table>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Machines virtuelles</p>
@@ -162,7 +162,7 @@
           <table class="infra-table">
             <tr><th>Rôle</th><th>Machine</th><th>IP</th></tr>
             <tr><td>Cible</td><td>DC01 — RDP TCP 3389</td><td>192.168.2.2</td></tr>
-            <tr><td>Attaquant</td><td>KALI01</td><td>192.168.3.10</td></tr>
+            <tr><td>Attaquant</td><td>KALI01</td><td>192.168.3.2</td></tr>
           </table>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 1 — Découverte du service</p>
@@ -212,7 +212,7 @@
             <tr><td>WAZUH01</td><td>Manager + Dashboard (Debian 12)</td><td>192.168.2.20</td></tr>
             <tr><td>DC01</td><td>Domain Controller + Agent</td><td>192.168.2.2</td></tr>
             <tr><td>CLIENT01</td><td>Poste utilisateur + Agent</td><td>192.168.2.10</td></tr>
-            <tr><td>KALI01</td><td>Machine d'attaque</td><td>192.168.3.10</td></tr>
+            <tr><td>KALI01</td><td>Machine d'attaque</td><td>192.168.3.2</td></tr>
           </table>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Événements surveillés</p>
@@ -240,7 +240,7 @@
             <li><strong style="color:var(--black)">Blocage IP</strong> — niveau ≥ 10 : l'IP source est bloquée automatiquement via firewall-drop</li>
             <li><strong style="color:var(--black)">Désactivation de compte</strong> — niveau ≥ 12 : script PowerShell déclenché sur DC01, compte compromis suspendu</li>
           </ul>
-          <div class="screenshot">Capture — IP 192.168.3.10 bloquée automatiquement</div>
+          <div class="screenshot">Capture — IP 192.168.3.2 bloquée automatiquement</div>
           <div class="screenshot">Capture — Compte désactivé dans AD après déclenchement</div>
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Validation</p>
