@@ -271,17 +271,24 @@ code { font-size: 12px; background: var(--light); padding: 2px 6px; font-family:
 footer {
   background: var(--accent);
   color: rgba(255,255,255,0.85);
-  padding: 20px 48px;
+  padding: 20px 0;
   font-size: 12px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+footer .footer-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  position: relative;
-  z-index: 2;
-  width: 100%;
 }
+
 footer .footer-accent { color: #fff; font-weight: 500; }
 
 @media (max-width: 580px) {
@@ -296,3 +303,27 @@ footer .footer-accent { color: #fff; font-weight: 500; }
   .accordion-body { padding-left: 0; }
   footer { padding: 20px 24px; }
 }
+
+/* ── LIGHTBOX ── */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  cursor: zoom-out;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 2px solid rgba(255,255,255,0.1);
+}
+.lab-img {
+  cursor: zoom-in;
+  transition: opacity 0.15s;
+}
+.lab-img:hover { opacity: 0.85; }
