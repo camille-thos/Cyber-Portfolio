@@ -308,23 +308,32 @@
   });
 </script>
 
-  // Lightbox
-  const overlay = document.createElement('div');
-  overlay.className = 'lightbox-overlay';
-  const overlayImg = document.createElement('img');
-  overlay.appendChild(overlayImg);
-  document.body.appendChild(overlay);
 
-  document.querySelectorAll('.lab-img').forEach(img => {
-    img.addEventListener('click', () => {
-      overlayImg.src = img.src;
-      overlayImg.alt = img.alt;
-      overlay.classList.add('active');
+<div id="lb" style="visibility:hidden;opacity:0;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;transition:opacity 0.2s,visibility 0.2s;">
+  <img id="lb-img" style="max-width:90vw;max-height:90vh;object-fit:contain;" />
+</div>
+<script>
+  document.querySelectorAll('.lab-img').forEach(function(img) {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function() {
+      document.getElementById('lb-img').src = this.src;
+      var lb = document.getElementById('lb');
+      lb.style.visibility = 'visible';
+      lb.style.opacity = '1';
     });
   });
-
-  overlay.addEventListener('click', () => overlay.classList.remove('active'));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') overlay.classList.remove('active'); });
+  document.getElementById('lb').addEventListener('click', function() {
+    this.style.visibility = 'hidden';
+    this.style.opacity = '0';
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      var lb = document.getElementById('lb');
+      lb.style.visibility = 'hidden';
+      lb.style.opacity = '0';
+    }
+  });
+</script>
 
 </body>
 </html>
