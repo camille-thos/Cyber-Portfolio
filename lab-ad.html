@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab AD — Camille Thos</title>
+  <title>Lab AD Camille Thos</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
 </head>
 <body>
 <div class="banner">
-  &#128269; Recherche alternance en cybersécurité — Blue Team / SecOps — Bretagne — Octobre 2026
+  &#128269; Recherche alternance en cybersécurité Blue Team / SecOps Bretagne Octobre 2026
   <a href="CV_THOS_CAMILLE.pdf" target="_blank">Télécharger mon CV →</a>
 </div>
 <div class="container">
@@ -30,7 +30,7 @@
     <span>/</span>
     <a href="index.html#labs">Labs</a>
     <span>/</span>
-    Active Directory — Attaque & Défense
+    Active Directory Attaque & Défense
   </div>
 
   <div class="lab-header">
@@ -38,7 +38,7 @@
       <span class="lab-num">Lab 01</span>
       <span class="lab-status">Publié</span>
     </div>
-    <h1 class="lab-title">Active Directory —<br>Attaque & Défense</h1>
+    <h1 class="lab-title">Active Directory <br>Attaque & Défense</h1>
     <p class="lab-intro">Construction d'un environnement Active Directory complet, du déploiement de l'infrastructure jusqu'à la détection et la réponse automatisée. Chaque phase s'appuie sur la précédente pour former une chaîne de sécurité cohérente.</p>
     <div class="lab-tags">
       <span class="lab-tag">Active Directory</span>
@@ -65,7 +65,7 @@
         <div class="accordion-body">
           <p>Mise en place d'une infrastructure Active Directory fonctionnelle dans un environnement réseau segmenté simulant un système d'information d'entreprise. Aucun mécanisme de détection ou SIEM n'est utilisé à ce stade.</p>
 
-          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Plan d'adressage — LAN</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Plan d'adressage LAN</p>
           <table class="infra-table">
             <tr><th>Machine</th><th>Rôle</th><th>IP</th></tr>
             <tr><td>OPNsense</td><td>Gateway LAN</td><td>192.168.2.1</td></tr>
@@ -73,7 +73,7 @@
             <tr><td>CLIENT01</td><td>Poste utilisateur</td><td>192.168.2.10</td></tr>
           </table>
 
-          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Plan d'adressage — ATTACK NET</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Plan d'adressage ATTACK NET</p>
           <table class="infra-table">
             <tr><th>Machine</th><th>Rôle</th><th>IP</th></tr>
             <tr><td>OPNsense</td><td>Gateway OPT1</td><td>192.168.3.1</td></tr>
@@ -81,10 +81,10 @@
           </table>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Machines virtuelles</p>
-          <p><strong style="color:var(--black)">OPNsense</strong> — Firewall assurant la segmentation entre les réseaux. Interfaces : WAN (accès externe optionnel), LAN (réseau interne), OPT1 (réseau attaquant).</p>
-          <p style="margin-top:10px"><strong style="color:var(--black)">DC01 — Windows Server 2025</strong> — Active Directory Domain Services, DNS. Domaine : <code>lab.local</code></p>
-          <p style="margin-top:10px"><strong style="color:var(--black)">CLIENT01 — Windows 10</strong> — Poste utilisateur joint au domaine, utilisé pour générer de l'activité légitime.</p>
-          <p style="margin-top:10px"><strong style="color:var(--black)">KALI01</strong> — Machine utilisée pour simuler des attaques provenant d'un réseau distinct.</p>
+          <p><strong style="color:var(--black)">OPNsense</strong> Firewall assurant la segmentation entre les réseaux. Interfaces WAN (accès externe optionnel), LAN (réseau interne), OPT1 (réseau attaquant).</p>
+          <p style="margin-top:10px"><strong style="color:var(--black)">DC01 Windows Server 2025</strong> Active Directory Domain Services, DNS. Domaine <code>lab.local</code></p>
+          <p style="margin-top:10px"><strong style="color:var(--black)">CLIENT01 Windows 10</strong> Poste utilisateur joint au domaine, utilisé pour générer de l'activité légitime.</p>
+          <p style="margin-top:10px"><strong style="color:var(--black)">KALI01</strong> Machine utilisée pour simuler des attaques provenant d'un réseau distinct.</p>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Organisation Active Directory</p>
           <p>L'AD est structuré avec trois unités organisationnelles représentant les services de l'entreprise. Chaque OU contient un dossier Utilisateurs, Groupes et Ordinateurs. Cette organisation permet d'appliquer des GPO ciblées, de simuler des délégations d'administration et de reproduire des cas réalistes d'élévation de privilèges.</p>
@@ -94,7 +94,7 @@
             <li>UO_RH</li>
           </ul>
 
-          <img class="lab-img" src="images/ADGLP.png" alt="Structure Active Directory — OUs Comptabilité, IT, RH" />
+          <img class="lab-img" src="images/ADGLP.png" alt="Structure Active Directory OUs Comptabilité, IT, RH" />
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Validation</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
@@ -122,10 +122,10 @@
 
           <p style="font-weight:500; color:var(--black); margin-top:16px; margin-bottom:8px;">Catégories activées</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
-            <li>Ouverture de session : Succès / Échec</li>
-            <li>Gestion des comptes utilisateurs : Succès</li>
-            <li>Accès au service d'annuaire : Succès</li>
-            <li>Utilisation des privilèges sensibles : Succès / Échec</li>
+            <li>Ouverture de session Succès / Échec</li>
+            <li>Gestion des comptes utilisateurs Succès</li>
+            <li>Accès au service d'annuaire Succès</li>
+            <li>Utilisation des privilèges sensibles Succès / Échec</li>
           </ul>
 
           <img class="lab-img" src="images/GPO.png" alt="Configuration des stratégies d'audit GPO" />
@@ -142,7 +142,7 @@
           <img class="lab-img" src="images/eventviewer_security.png" alt="Journaux de sécurité Event Viewer" />
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Établissement d'une baseline</p>
-          <p>Activité légitime générée depuis CLIENT01 : ouverture de session, déconnexion/reconnexion, accès aux ressources, administration AD et trafic réseau standard. Cette étape permet de différencier une activité normale d'un comportement suspect.</p>
+          <p>Activité légitime générée depuis CLIENT01 ouverture de session, déconnexion/reconnexion, accès aux ressources, administration AD et trafic réseau standard. Cette étape permet de différencier une activité normale d'un comportement suspect.</p>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Résultat</p>
           <p>L'infrastructure produit désormais des journaux de sécurité exploitables. Le domaine est prêt pour la phase suivante.</p>
@@ -162,19 +162,19 @@
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Contexte</p>
           <table class="infra-table">
             <tr><th>Rôle</th><th>Machine</th><th>IP</th></tr>
-            <tr><td>Cible</td><td>DC01 — RDP TCP 3389</td><td>192.168.2.2</td></tr>
+            <tr><td>Cible</td><td>DC01 RDP TCP 3389</td><td>192.168.2.2</td></tr>
             <tr><td>Attaquant</td><td>KALI01</td><td>192.168.3.2</td></tr>
           </table>
 
-          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 1 — Découverte du service</p>
-          <p>Vérification de l'exposition du service RDP depuis le réseau attaquant. Résultat : port 3389 ouvert, service ms-wbt-server détecté.</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 1 Découverte du service</p>
+          <p>Vérification de l'exposition du service RDP depuis le réseau attaquant. Résultat port 3389 ouvert, service ms-wbt-server détecté.</p>
           <img class="lab-img" src="images/port.png" alt="Scan du port 3389 depuis KALI01" />
 
-          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 2 — Simulation du brute force</p>
-          <p>Multiples tentatives d'authentification générées depuis Kali. Résultats : multiples tentatives échouées, puis découverte d'un mot de passe valide.</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 2 Simulation du brute force</p>
+          <p>Multiples tentatives d'authentification générées depuis Kali. Résultats multiples tentatives échouées, puis découverte d'un mot de passe valide.</p>
           <img class="lab-img" src="images/gen_log.png" alt="Génération des logs brute force" />
 
-          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 3 — Analyse des journaux Windows</p>
+          <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Étape 3 Analyse des journaux Windows</p>
           <p>Analyse via Observateur d'événements → Journaux Windows → Sécurité.</p>
           <table class="event-table" style="margin-top:12px; margin-bottom:16px;">
             <tr><th>Event ID</th><th>Description</th></tr>
@@ -193,7 +193,7 @@
           </ul>
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Conclusion</p>
-          <p>L'environnement permet d'identifier une tentative de brute force et de préparer la mise en place d'une réponse automatisée — objet de la Phase 04.</p>
+          <p>L'environnement permet d'identifier une tentative de brute force et de préparer la mise en place d'une réponse automatisée objet de la Phase 04.</p>
         </div>
       </div>
 
@@ -229,27 +229,27 @@
 
           <p style="font-weight:500; color:var(--black); margin-top:20px; margin-bottom:8px;">Règles de détection</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2; margin-bottom:8px;">
-            <li><strong style="color:var(--black)">Brute force RDP</strong> — plus de 5 Event ID 4625 en moins de 60 secondes → alerte niveau 10</li>
-            <li><strong style="color:var(--black)">Auth réussie après échecs</strong> — Event ID 4624 après série de 4625 → alerte niveau 12</li>
-            <li><strong style="color:var(--black)">Création de compte hors baseline</strong> — Event ID 4720 inattendu → alerte niveau 8</li>
+            <li><strong style="color:var(--black)">Brute force RDP</strong> plus de 5 Event ID 4625 en moins de 60 secondes → alerte niveau 10</li>
+            <li><strong style="color:var(--black)">Auth réussie après échecs</strong> Event ID 4624 après série de 4625 → alerte niveau 12</li>
+            <li><strong style="color:var(--black)">Création de compte hors baseline</strong> Event ID 4720 inattendu → alerte niveau 8</li>
           </ul>
-          <img class="lab-img" src="images/Wazuh_Dashboard.png" alt="Dashboard Wazuh — agents DC01 et CLIENT01 connectés" />
-          <img class="lab-img" src="images/Detection.png" alt="Alertes Wazuh — RDP Attack Detected rule 100002" />
+          <img class="lab-img" src="images/Wazuh_Dashboard.png" alt="Dashboard Wazuh agents DC01 et CLIENT01 connectés" />
+          <img class="lab-img" src="images/Detection.png" alt="Alertes Wazuh RDP Attack Detected rule 100002" />
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Réponse automatisée</p>
-          <p>Wazuh déclenche automatiquement un blocage lorsque la règle 100002 atteint le niveau 10. L'IP source 192.168.3.2 est bloquée via netsh.exe sur DC01 — Kali ne peut plus établir de connexion RDP.</p>
-          <p style="margin-top:10px; font-size:13px; color:var(--gray);">Note : Windows dispose également d'un mécanisme natif de verrouillage de compte via GPO (Account Lockout Policy) qui complète la réponse au niveau système.</p>
-          <img class="lab-img" src="images/blocage.png" alt="Active response déclenchée — netsh.exe add" />
-          <img class="lab-img" src="images/rdp.png" alt="Hydra — connection failed, brute force bloqué" />
+          <p>Wazuh déclenche automatiquement un blocage lorsque la règle 100002 atteint le niveau 10. L'IP source 192.168.3.2 est bloquée via netsh.exe sur DC01 Kali ne peut plus établir de connexion RDP.</p>
+          <p style="margin-top:10px; font-size:13px; color:var(--gray);">Note Windows dispose également d'un mécanisme natif de verrouillage de compte via GPO (Account Lockout Policy) qui complète la réponse au niveau système.</p>
+          <img class="lab-img" src="images/blocage.png" alt="Active response déclenchée netsh.exe add" />
+          <img class="lab-img" src="images/rdp.png" alt="Hydra connection failed, brute force bloqué" />
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Validation</p>
-          <p>Le scénario de la Phase 03 est rejoué : KALI01 (192.168.3.2) lance le brute force → Wazuh détecte les 4625 répétés → règle 100002 niveau 10 → active response netsh.exe → IP bloquée → Hydra : 0 valid password found.</p>
+          <p>Le scénario de la Phase 03 est rejoué KALI01 (192.168.3.2) lance le brute force → Wazuh détecte les 4625 répétés → règle 100002 niveau 10 → active response netsh.exe → IP bloquée → Hydra 0 valid password found.</p>
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Limites et pistes d'amélioration</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
-            <li>Seuils calibrés pour le lab — à ajuster en production selon la baseline réelle</li>
-            <li>La désactivation de compte peut générer des faux positifs — une couche SOAR serait nécessaire en production</li>
-            <li>Piste suivante : intégrer Sysmon pour détecter des techniques avancées (Pass-the-Hash, Kerberoasting)</li>
+            <li>Seuils calibrés pour le lab à ajuster en production selon la baseline réelle</li>
+            <li>La désactivation de compte peut générer des faux positifs une couche SOAR serait nécessaire en production</li>
+            <li>Piste suivante intégrer Sysmon pour détecter des techniques avancées (Pass-the-Hash, Kerberoasting)</li>
           </ul>
         </div>
       </div>
@@ -280,7 +280,7 @@
 </div>
 <footer>
   <div class="footer-inner">
-    <span>Camille Thos &mdash; 2026</span>
+    <span>Camille Thos - 2026</span>
     <span class="footer-accent">Blue Team &middot; SecOps &middot; Purple</span>
     <span>Mis à jour le 19/03/2026</span>
   </div>
@@ -288,7 +288,7 @@
 <script>
   function toggleTheme() {
     const html = document.documentElement;
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
   }
