@@ -232,20 +232,17 @@
             <li><strong style="color:var(--black)">Auth réussie après échecs</strong> — Event ID 4624 après série de 4625 → alerte niveau 12</li>
             <li><strong style="color:var(--black)">Création de compte hors baseline</strong> — Event ID 4720 inattendu → alerte niveau 8</li>
           </ul>
-          <div class="screenshot">Capture — Dashboard Wazuh, alertes brute force RDP</div>
-          <div class="screenshot">Capture — Corrélation Event ID 4625 + 4624 dans Wazuh</div>
+          <img class="lab-img" src="images/Wazuh_Dashboard.png" alt="Dashboard Wazuh — agents DC01 et CLIENT01 connectés" />
+          <img class="lab-img" src="images/Detection.png" alt="Alertes Wazuh — RDP Attack Detected rule 100002" />
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Réponse automatisée</p>
-          <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2; margin-bottom:8px;">
-            <li><strong style="color:var(--black)">Blocage IP</strong> — niveau ≥ 10 : l'IP source est bloquée automatiquement via firewall-drop</li>
-            <li><strong style="color:var(--black)">Désactivation de compte</strong> — niveau ≥ 12 : script PowerShell déclenché sur DC01, compte compromis suspendu</li>
-          </ul>
-          <div class="screenshot">Capture — IP 192.168.3.2 bloquée automatiquement</div>
-          <div class="screenshot">Capture — Compte désactivé dans AD après déclenchement</div>
+          <p>Wazuh déclenche automatiquement un blocage lorsque la règle 100002 atteint le niveau 10. L'IP source 192.168.3.2 est bloquée via netsh.exe sur DC01 — Kali ne peut plus établir de connexion RDP.</p>
+          <p style="margin-top:10px; font-size:13px; color:var(--gray);">Note : Windows dispose également d'un mécanisme natif de verrouillage de compte via GPO (Account Lockout Policy) qui complète la réponse au niveau système.</p>
+          <img class="lab-img" src="images/blocage.png" alt="Active response déclenchée — netsh.exe add" />
+          <img class="lab-img" src="images/rdp.png" alt="Hydra — connection failed, brute force bloqué" />
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Validation</p>
-          <p>Le scénario de la Phase 03 est rejoué : KALI01 lance le brute force → Wazuh détecte → active response déclenche → IP bloquée → alerte visible dans le dashboard.</p>
-          <div class="screenshot">Capture — Timeline des alertes Wazuh lors du rejeu</div>
+          <p>Le scénario de la Phase 03 est rejoué : KALI01 (192.168.3.2) lance le brute force → Wazuh détecte les 4625 répétés → règle 100002 niveau 10 → active response netsh.exe → IP bloquée → Hydra : 0 valid password found.</p>
 
           <p style="font-weight:500; color:var(--black); margin-top:24px; margin-bottom:8px;">Limites et pistes d'amélioration</p>
           <ul style="margin-left:16px; font-size:13px; color:var(--gray); line-height:2.2;">
@@ -281,9 +278,11 @@
 
 </div>
 <footer>
-  <span>Camille Thos &mdash; 2026</span>
-  <span class="footer-accent">Blue Team &middot; SecOps &middot; Purple</span>
-  <span>Mis à jour le 19/03/2026</span>
+  <div class="footer-inner">
+    <span>Camille Thos &mdash; 2026</span>
+    <span class="footer-accent">Blue Team &middot; SecOps &middot; Purple</span>
+    <span>Mis à jour le 19/03/2026</span>
+  </div>
 </footer>
 <script>
   function toggleTheme() {
