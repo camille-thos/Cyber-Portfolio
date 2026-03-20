@@ -306,24 +306,30 @@ footer .footer-accent { color: #fff; font-weight: 500; }
 
 /* ── LIGHTBOX ── */
 .lightbox-overlay {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.88);
   z-index: 9999;
   cursor: zoom-out;
+  display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.2s, visibility 0.2s;
 }
-.lightbox-overlay.active { display: flex; }
+.lightbox-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
 .lightbox-overlay img {
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
-  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 60px rgba(0,0,0,0.8);
 }
 .lab-img {
   cursor: zoom-in;
   transition: opacity 0.15s;
 }
-.lab-img:hover { opacity: 0.85; }
+.lab-img:hover { opacity: 0.82; }
